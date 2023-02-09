@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' display-mode='raw' buildActiveScheme='true' importAppTypes='true'>
+    <pages>
+        <page name='Tipos de datos'/>
+        <page name='Operadores'/>
+        <page name='Optional'/>
+        <page name='Flujos'/>
+        <page name='Flujos2'/>
+        <page name='Hash'/>
+        <page name='Collections (Array)'/>
+        <page name='Collections (Dictionary)'/>
+        <page name='Collections (Conjuntos - SET)'/>
+        <page name='Strings'/>
+        <page name='Tuple'/>
+    </pages>
+</playground>
