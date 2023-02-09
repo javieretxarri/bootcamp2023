@@ -4,14 +4,12 @@ import UIKit
 // Realice un programa que sea capaz de determinar si un número entero
 // positivo cualquiera es un número primo o no.
 
-func buclePrim(i: Int, number: Int) -> Bool {
-    print(i, number)
-
+func buclePrime(i: Int, number: Int) -> Bool {
     if i * i <= number {
         if number % i == 0 || number % (i + 2) == 0 {
             return false
         } else {
-            return buclePrim(i: i + 6, number: number)
+            return buclePrime(i: i + 6, number: number)
         }
     } else {
         return true
@@ -26,7 +24,7 @@ func isPrimeProgram(number: Int) -> Bool {
             if number % 2 == 0 || number % 3 == 0 {
                 return false
             } else {
-                return buclePrim(i: 5, number: number)
+                return buclePrime(i: 5, number: number)
             }
         }
 
@@ -35,4 +33,5 @@ func isPrimeProgram(number: Int) -> Bool {
     }
 }
 
-isPrimeProgram(number: 79)
+let numberToCheckIfItIsPrime = 79
+print("number \(numberToCheckIfItIsPrime) is prime: \(isPrimeProgram(number: numberToCheckIfItIsPrime))")
