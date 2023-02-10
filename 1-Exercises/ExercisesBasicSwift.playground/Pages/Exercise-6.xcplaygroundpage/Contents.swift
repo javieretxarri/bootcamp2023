@@ -33,13 +33,12 @@ func fillSetWithPrimeQuantityEgualTo(number: Int) -> Set<Int> {
     return conjuntoPrimos
 }
 
-let userAskingNumber = 10
+let userAskingNumber = 20
 
 var setPrimos = fillSetWithPrimeQuantityEgualTo(number: userAskingNumber)
 
 var setRandom: Set<Int> = []
 
-setPrimos.max()
 while setPrimos.intersection(setRandom).count < 3 {
     setRandom.insert(Int.random(in: 2 ... setPrimos.max()!))
 }

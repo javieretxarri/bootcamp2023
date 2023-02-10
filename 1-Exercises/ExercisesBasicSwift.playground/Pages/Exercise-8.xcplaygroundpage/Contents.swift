@@ -21,7 +21,11 @@ func isPrime(number: Int) -> Bool {
     return false
 }
 
-var oneHundredNumbers = (0 ..< 100).map { _ in Int.random(in: 1 ... 10000) }
-let primeNumbers = oneHundredNumbers.filter { isPrime(number: $0) }
+func getOnlyPrimeNumberFromArray(_ numbers: [Int]) -> [Int] {
+    let primeNumbers = numbers.filter { isPrime(number: $0) }
+    return Array(Set(primeNumbers))
+}
 
-print("Between 100 random numbers the prime numbers are: \(primeNumbers)")
+var oneHundredNumbers = (0 ..< 100).map { _ in Int.random(in: 1 ... 100) }
+
+print("Between 100 random numbers the prime numbers are (without duplicate values): \(getOnlyPrimeNumberFromArray(oneHundredNumbers).sorted())")
