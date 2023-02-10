@@ -11,6 +11,11 @@ import Foundation
  */
 
 func printNFirstFibonacciNumbers(number: Int) {
+    guard number <= 91 else {
+        print("The maximum number is 91")
+        return
+    }
+
     print("Fibonacci's sequence number 1 is 1")
     print("Fibonacci's sequence number 2 is 2")
     var lastTwo = [1, 2]
@@ -24,4 +29,4 @@ func printNFirstFibonacciNumbers(number: Int) {
     }
 }
 
-printNFirstFibonacciNumbers(number: 80)
+printNFirstFibonacciNumbers(number: 92)

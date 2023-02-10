@@ -2,6 +2,7 @@ import Foundation
 
 class Class {
     var valor = 1
+    var valor2: Int! // te prometo que yo me encargo de ello
 
     func dimeValor() -> Int {
         return valor
@@ -102,7 +103,6 @@ cloneChiguagua.sound
 chiguagua.talk()
 chiguagua.corre()
 
-// Final makes this class not extensible
 final class UnModifiable {
     var observador: String? = "Estoy mirando a la luna"
 
@@ -110,3 +110,16 @@ final class UnModifiable {
         observador = nil
     }
 }
+
+// Esto es durante la teoría de enum
+final class Positiva {
+    var valor: Int
+
+    init?(valor: Int) {
+        guard valor > 0 else { return nil }
+        self.valor = valor
+    }
+}
+
+let pos1 = Positiva(valor: 45)
+let pos2 = Positiva(valor: -45)

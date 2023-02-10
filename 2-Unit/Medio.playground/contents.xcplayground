@@ -3,5 +3,7 @@
     <pages>
         <page name='Funciones'/>
         <page name='Clases'/>
+        <page name='Struct'/>
+        <page name='Enum'/>
     </pages>
 </playground>

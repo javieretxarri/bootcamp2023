@@ -23,9 +23,8 @@ func isPrimeProgram(number: Int) -> Bool {
         } else {
             if number % 2 == 0 || number % 3 == 0 {
                 return false
-            } else {
-                return buclePrime(i: 5, number: number)
             }
+            return buclePrime(i: 5, number: number)
         }
 
     } else {
