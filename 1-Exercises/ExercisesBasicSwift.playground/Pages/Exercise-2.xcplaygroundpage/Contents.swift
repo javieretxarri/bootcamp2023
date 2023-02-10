@@ -15,18 +15,18 @@ func isPrime(number: Int) -> Bool {
         }
         return true
     }
-
     return false
 }
 
-let inputNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 79]
-
-var primeNumbers: [Int] = []
-
-for number in inputNumbers {
-    if isPrime(number: number) {
-        primeNumbers.append(number)
+func countPrimeNumbersIn(numbers: Int...) -> [Int] {
+    var primeNumbers: [Int] = []
+    for number in numbers {
+        if isPrime(number: number) {
+            primeNumbers.append(number)
+        }
     }
+    return primeNumbers
 }
 
+var primeNumbers = countPrimeNumbersIn(numbers: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 79)
 print("The total amount of prime numbes in the array is \(primeNumbers.count) and their values are \(primeNumbers)")

@@ -8,10 +8,8 @@ import Foundation
  ALGORITMO: Una palabra palíndroma se lee igual en ambos sentidos.
  */
 
-func isPalindrome(string: String) -> Bool {
-    if string.components(separatedBy: " ").count > 1 {
-        return false
-    }
+func isPalindrome(string: String) -> Bool? {
+    guard string.components(separatedBy: " ").count == 1 else { return nil }
 
     var wordToAnanlyze = string.lowercased()
     var leftPointer = 0
@@ -34,5 +32,10 @@ func isPalindrome(string: String) -> Bool {
 }
 
 for word in ["Pamplona", "Navarra", "nada", "ama", "aaabbbaaa", "amar - rama"] {
-    print(#"The word "\#(word)" is palindrome: \#(isPalindrome(string: word)) "#)
+    guard let isPalindrome = isPalindrome(string: word) else {
+        print("The word \(word) is not accepted")
+        continue
+    }
+
+    print(#"The word "\#(word)" is palindrome: \#(isPalindrome) "#)
 }
