@@ -6,10 +6,21 @@ import Foundation
  números dentro de un array.
  */
 
-func getAvgValueFromAListOfNumber(_ numbers: [Int]) -> Int {
-    return numbers.reduce(0) { x, y in x + y } / numbers.count
+func suma(numbers: [Int]) -> Int {
+    var suma = 0
+    for i in numbers {
+        suma += i
+    }
+    return suma
 }
 
-var oneHundredNumbers = (0 ..< 100).map { _ in Int.random(in: 1 ... 10000) }
+func getAvgValueFromAListOfNumber(_ numbers: [Int]) -> Int {
+    return suma(numbers: numbers) / numbers.count
+}
+
+var oneHundredNumbers: [Int] = []
+for _ in 0 ..< 100 {
+    oneHundredNumbers.append(Int.random(in: 1 ... 10000))
+}
 
 print("The average value ot the array is \(getAvgValueFromAListOfNumber(oneHundredNumbers))")

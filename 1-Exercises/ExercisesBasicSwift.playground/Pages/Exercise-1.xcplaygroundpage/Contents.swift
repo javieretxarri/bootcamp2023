@@ -11,27 +11,23 @@ func buclePrime(i: Int, number: Int) -> Bool {
         } else {
             return buclePrime(i: i + 6, number: number)
         }
-    } else {
-        return true
     }
+
+    return true
 }
 
 func isPrimeProgram(number: Int) -> Bool {
-    if number > 0 {
-        if number <= 3 {
-            return true
-        } else {
-            if number % 2 == 0 || number % 3 == 0 {
-                return false
-            }
-            return buclePrime(i: 5, number: number)
-        }
+    guard number > 0 else { return false }
 
-    } else {
-        // It should ask for a new number but it seems that it does not work in playground the option readLine()
-        return isPrimeProgram(number: 67)
+    if number <= 3 {
+        return true
     }
+
+    if number % 2 == 0 || number % 3 == 0 {
+        return false
+    }
+    return buclePrime(i: 5, number: number)
 }
 
-let numberToCheckIfItIsPrime = 79
+let numberToCheckIfItIsPrime = 153548601
 print("number \(numberToCheckIfItIsPrime) is prime: \(isPrimeProgram(number: numberToCheckIfItIsPrime))")

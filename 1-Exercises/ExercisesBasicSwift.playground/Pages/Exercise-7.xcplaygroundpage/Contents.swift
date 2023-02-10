@@ -17,4 +17,3 @@ func sum(numbers: [Int]) -> Int {
 let arrayWithNumbers = [1, 2, 3, 4, 5, 5, 6, 6, 7, 7, 8, 8, 6, 3, 3, 3, 3, 31, 1, 1]
 
 print("The total sum of the array is \(sum(numbers: arrayWithNumbers))")
-print("The total sum of the array using reduce is  \(arrayWithNumbers.reduce(0) { accum, nextValue in accum + nextValue })")

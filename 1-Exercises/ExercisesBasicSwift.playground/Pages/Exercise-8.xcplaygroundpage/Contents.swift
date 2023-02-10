@@ -22,10 +22,19 @@ func isPrime(number: Int) -> Bool {
 }
 
 func getOnlyPrimeNumberFromArray(_ numbers: [Int]) -> [Int] {
-    let primeNumbers = numbers.filter { isPrime(number: $0) }
+    var primeNumbers: [Int] = []
+    for number in numbers {
+        if isPrime(number: number) {
+            primeNumbers.append(number)
+        }
+    }
+
     return Array(Set(primeNumbers))
 }
 
-var oneHundredNumbers = (0 ..< 100).map { _ in Int.random(in: 1 ... 100) }
+var oneHundredNumbers: [Int] = []
+for _ in 0 ..< 100 {
+    oneHundredNumbers.append(Int.random(in: 1 ... 100))
+}
 
 print("Between 100 random numbers the prime numbers are (without duplicate values): \(getOnlyPrimeNumberFromArray(oneHundredNumbers).sorted())")
