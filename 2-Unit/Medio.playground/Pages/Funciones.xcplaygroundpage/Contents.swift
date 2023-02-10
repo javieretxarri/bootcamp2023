@@ -109,3 +109,61 @@ sumOrMulNumeros([1, 2, 3, 4, 5, 6, 76, 7, 3], operacion: true)
 [1, 2, 3, 4, 5, 6, 76, 7, 3].filter { x in
     x > 70
 }
+
+func sumOMultiplicaNumeros(_ ns: Int..., operacion o: Bool = true) -> Int {
+    guard var f = ns.first else { return 0 }
+    if o {
+        for n in ns.dropFirst() {
+            f += n
+        }
+    } else {
+        for n in ns.dropFirst() {
+            f *= n
+        }
+    }
+    return f
+}
+
+sumOMultiplicaNumeros(1, 2, 3, 4, 5, 6, 76, 7, 3, operacion: false)
+
+func sumar22(numbers: inout [Int]) -> Int? {
+    guard !numbers.isEmpty else { return nil }
+    let result = numbers.reduce(0) { $0 + $1 }
+    numbers.append(result)
+
+    return result
+}
+
+var array = [1, 2, 3]
+sumar22(numbers: &array)
+print(array)
+
+sumar22(numbers: &array)
+print(array)
+
+func llamada() -> String {
+    print("Abrir conexión")
+
+    defer {
+        print("Cerrar conexión")
+    }
+
+    let resultado = Int.random(in: 1 ... 4)
+    switch resultado {
+    case 1:
+        return "Error del servidor"
+    case 2:
+        return "Dato procesado"
+    case 3:
+        return "Resultado parcial"
+    case 4:
+        return "Error desconocido"
+    default: ()
+    }
+
+    return "Se acabo"
+}
+
+llamada()
+
+let arrayFUnctional = [1, 2, 3, 4, 5, 6, 7, 8, 9]

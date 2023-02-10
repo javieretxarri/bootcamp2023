@@ -29,6 +29,7 @@ func isPrimeProgram(number: Int) -> Bool {
         }
 
     } else {
+        // It should ask for a new number but it seems that it does not work in playground the option readLine()
         return isPrimeProgram(number: 67)
     }
 }
