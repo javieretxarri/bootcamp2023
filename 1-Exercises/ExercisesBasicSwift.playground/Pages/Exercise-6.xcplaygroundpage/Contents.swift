@@ -8,23 +8,11 @@ import Foundation
  común con el conjunto inicial.
  */
 
-func isPrime(number: Int) -> Bool {
-    if number > 1 {
-        for divider in 2 ..< number {
-            if number % divider == 0 {
-                return false
-            }
-        }
-        return true
-    }
-
-    return false
-}
-
 func fillSetWithPrimeQuantityEgualTo(number: Int) -> Set<Int> {
     var conjuntoPrimos: Set<Int> = []
     var value = 2
     while conjuntoPrimos.count < number {
+        // isPrime is defined in resources folder
         if isPrime(number: value) {
             conjuntoPrimos.insert(value)
         }

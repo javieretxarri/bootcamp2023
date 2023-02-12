@@ -6,21 +6,10 @@ import Foundation
  que haya en un array de números enteros.
  */
 
-func isPrime(number: Int) -> Bool {
-    if number > 1 {
-        for divider in 2 ..< number {
-            if number % divider == 0 {
-                return false
-            }
-        }
-        return true
-    }
-    return false
-}
-
 func countPrimeNumbersIn(numbers: Int...) -> [Int] {
     var primeNumbers: [Int] = []
     for number in numbers {
+        // isPrime is defined in resources folder
         if isPrime(number: number) {
             primeNumbers.append(number)
         }

@@ -8,22 +8,11 @@ import Foundation
  y luego filtra este para obtener como resultado solo aquellos números
  que son primos entre los 100 que había al principio.
  */
-func isPrime(number: Int) -> Bool {
-    if number > 1 {
-        for divider in 2 ..< number {
-            if number % divider == 0 {
-                return false
-            }
-        }
-        return true
-    }
-
-    return false
-}
 
 func getOnlyPrimeNumberFromArray(_ numbers: [Int]) -> [Int] {
     var primeNumbers: [Int] = []
     for number in numbers {
+        // isPrime is defined in resources folder
         if isPrime(number: number) {
             primeNumbers.append(number)
         }

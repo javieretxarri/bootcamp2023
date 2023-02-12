@@ -1,10 +1,6 @@
-import UIKit
+import Foundation
 
-// Ejercicio 1:
-// Realice un programa que sea capaz de determinar si un número entero
-// positivo cualquiera es un número primo o no.
-
-func buclePrime(i: Int, number: Int) -> Bool {
+private func buclePrime(i: Int, number: Int) -> Bool {
     if i * i <= number {
         if number % i == 0 || number % (i + 2) == 0 {
             return false
@@ -15,7 +11,7 @@ func buclePrime(i: Int, number: Int) -> Bool {
     return true
 }
 
-func isPrime(number: Int) -> Bool {
+public func isPrime(number: Int) -> Bool {
     guard number > 0 else { return false }
 
     if number <= 3 {
@@ -28,5 +24,11 @@ func isPrime(number: Int) -> Bool {
     return buclePrime(i: 5, number: number)
 }
 
-let numberToCheckIfItIsPrime = 1530601
-print("number \(numberToCheckIfItIsPrime) is prime: \(isPrime(number: numberToCheckIfItIsPrime))")
+public func sum(numbers: [Int]) -> Int? {
+    guard numbers.count > 0 else { return nil }
+    var sum = 0
+    for value in numbers {
+        sum += value
+    }
+    return sum
+}

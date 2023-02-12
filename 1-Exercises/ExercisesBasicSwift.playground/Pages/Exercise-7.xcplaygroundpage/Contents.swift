@@ -6,7 +6,8 @@ import Foundation
  un array de números enteros.
  */
 
-func sum(numbers: [Int]) -> Int {
+func sum(numbers: [Int]) -> Int? {
+    guard numbers.count > 0 else { return nil }
     var sum = 0
     for value in numbers {
         sum += value
@@ -16,4 +17,8 @@ func sum(numbers: [Int]) -> Int {
 
 let arrayWithNumbers = [1, 2, 3, 4, 5, 5, 6, 6, 7, 7, 8, 8, 6, 3, 3, 3, 3, 31, 1, 1]
 
-print("The total sum of the array is \(sum(numbers: arrayWithNumbers))")
+if let sum = sum(numbers: arrayWithNumbers) {
+    print("The total sum of the array is \(sum)")
+} else {
+    print("The given array was empty")
+}

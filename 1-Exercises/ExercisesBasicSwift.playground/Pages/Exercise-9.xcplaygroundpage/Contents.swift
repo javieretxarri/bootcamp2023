@@ -6,16 +6,9 @@ import Foundation
  números dentro de un array.
  */
 
-func suma(numbers: [Int]) -> Int {
-    var suma = 0
-    for i in numbers {
-        suma += i
-    }
-    return suma
-}
-
 func getAvgValueFromAListOfNumber(_ numbers: [Int]) -> Int {
-    return suma(numbers: numbers) / numbers.count
+    // sum is defined in resources folder
+    return (sum(numbers: numbers) ?? 0) / numbers.count
 }
 
 var oneHundredNumbers: [Int] = []
