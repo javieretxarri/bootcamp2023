@@ -5,5 +5,8 @@
         <page name='Clases'/>
         <page name='Struct'/>
         <page name='Enum'/>
+        <page name='Propiedades caluladas'/>
+        <page name='Juego (Observadores)'/>
+        <page name='Tipos de clases'/>
     </pages>
 </playground>
