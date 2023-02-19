@@ -6,6 +6,7 @@ final class Personaje {
 
     // class es igual que static, solo para clases
     // no obstante, class permite sobrecarga en herencia haciendo un override class en hijos
+    // class solo puede ser en propiedades calculadas y métodos (no en almacenadas)
 
     static func crearPersonaje() -> Personaje {
         let vida = Int.random(in: vidaRef * nivel ... vidaRef * (nivel + 1))

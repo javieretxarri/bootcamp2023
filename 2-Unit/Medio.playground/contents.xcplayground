@@ -8,5 +8,6 @@
         <page name='Propiedades caluladas'/>
         <page name='Juego (Observadores)'/>
         <page name='Tipos de clases'/>
+        <page name='Extensions'/>
     </pages>
 </playground>

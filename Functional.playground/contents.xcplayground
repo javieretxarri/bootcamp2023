@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' buildActiveScheme='true' importAppTypes='true'>
+    <pages>
+        <page name='Closures'/>
+        <page name='Inferencia'/>
+        <page name='Funciones puras'/>
+        <page name='Funciones embebidas'/>
+        <page name='Parcialización - Currying'/>
+        <page name='Recursividad'/>
+        <page name='Map'/>
+        <page name='Filter'/>
+        <page name='Reduce'/>
+        <page name='allSatisfy'/>
+        <page name='contains'/>
+        <page name='CompactMap'/>
+        <page name='drop-prefix'/>
+        <page name='flatMap'/>
+        <page name='first-last'/>
+        <page name='forEach'/>
+        <page name='sorted'/>
+        <page name='all4One'/>
+    </pages>
+</playground>
