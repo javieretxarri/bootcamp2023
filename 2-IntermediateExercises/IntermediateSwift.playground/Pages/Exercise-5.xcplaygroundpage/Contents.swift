@@ -36,6 +36,8 @@ class Personaje {
             }
         }
         willSet {
+            print(vida)
+            print(newValue)
             if newValue <= 0 {
                 muerto = true
             }
@@ -137,24 +139,29 @@ final class Enemigo: Personaje {
     }
 }
 
-let heroe = Heroe(nombre: "Conan", vida: 60, ataque: 50)
+let heroe = Heroe(nombre: "Heroe", vida: 60, ataque: 50)
 let mago = Mago(nombre: "Mago", vida: 130, ataque: 50, valorDeMagia: 25)
 let guerrero = Guerrero(nombre: "Guerrero", vida: 120, ataque: 60)
 
 let enemigoConArma = Enemigo(nombre: "EnemigoConArma", vida: 150, ataque: 200, arma: .hacha)
 let enemigoSinArma = Enemigo(nombre: "EnemigoSinArma", vida: 50, ataque: 30)
 
+enemigoSinArma.saludar()
 enemigoSinArma.vida
+heroe.saludar()
 heroe.atacar(enemigo: enemigoSinArma)
 enemigoSinArma.vida
 enemigoSinArma.muerto
+mago.saludar()
 mago.atacar(enemigo: enemigoSinArma)
 enemigoSinArma.vida
 enemigoSinArma.muerto
+guerrero.saludar()
 guerrero.atacar(enemigo: enemigoSinArma)
 enemigoSinArma.vida
 enemigoSinArma.muerto
 
+enemigoConArma.saludar()
 enemigoConArma.vida
 heroe.atacar(enemigo: enemigoSinArma)
 enemigoConArma.vida
