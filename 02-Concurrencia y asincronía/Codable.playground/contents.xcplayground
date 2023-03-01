@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' display-mode='raw' buildActiveScheme='true' importAppTypes='true'>
+    <pages>
+        <page name='Persistencia'/>
+        <page name='JSONSerialization'/>
+        <page name='Codable'/>
+        <page name='Trantor Codable'/>
+        <page name='AC Codable'/>
+        <page name='Prueba'/>
+    </pages>
+</playground>

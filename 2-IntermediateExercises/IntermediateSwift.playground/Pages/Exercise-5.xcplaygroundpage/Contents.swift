@@ -31,15 +31,17 @@ class Personaje {
     let nombre: String
     var vida: Int {
         didSet {
+            if oldValue == 0 {
+                print("Soy \(nombre) de tipo \(type(of: self)) y ya estoy muerto, no hace falta que te ensañes por favor")
+            }
             if vida < 0 {
                 vida = 0
             }
         }
         willSet {
-            print(vida)
-            print(newValue)
-            if newValue <= 0 {
+            if vida > 0 && newValue <= 0 {
                 muerto = true
+                print("Soy \(nombre) de tipo \(type(of: self)) y acabo de morir")
             }
         }
     }
@@ -65,6 +67,10 @@ class Heroe: Personaje {
     }
 
     func atacar(enemigo: Enemigo) {
+        guard !muerto else {
+            print("Estoy muerto, por lo que no puedo atacar")
+            return
+        }
         let ataque = Int.random(in: 0 ... ataque / 2)
         enemigo.vida -= ataque
     }
@@ -79,6 +85,10 @@ final class Mago: Heroe {
     }
 
     override func atacar(enemigo: Enemigo) {
+        guard !muerto else {
+            print("Estoy muerto, por lo que no puedo atacar")
+            return
+        }
         let ataque = Int.random(in: 1 ... ataque / 2) + (valorDeMagia / 2)
         enemigo.vida -= ataque
     }
@@ -93,6 +103,10 @@ final class Guerrero: Heroe {
     }
 
     override func atacar(enemigo: Enemigo) {
+        guard !muerto else {
+            print("Estoy muerto, por lo que no puedo atacar")
+            return
+        }
         let ataque = Int.random(in: 1 ... ataque / 2) + ataqueEspada
         enemigo.vida -= ataque
     }
@@ -100,8 +114,8 @@ final class Guerrero: Heroe {
 
 final class Enemigo: Personaje {
     var ataque: Int
-    enum Arma: String {
-        case cadena, sable, hacha
+    enum Arma: Int {
+        case cadena = 10, sable = 5, hacha = 2
     }
 
     var arma: Arma?
@@ -118,17 +132,15 @@ final class Enemigo: Personaje {
     }
 
     func atacar(heroe: Heroe) {
+        guard !muerto else {
+            print("Estoy muerto, por lo que no puedo atacar")
+            return
+        }
+
         var ataqueExtra = 0
 
         if let arma = arma {
-            switch arma {
-            case .hacha:
-                ataqueExtra = 10
-            case .sable:
-                ataqueExtra = 5
-            case .cadena:
-                ataqueExtra = 2
-            }
+            ataqueExtra = arma.rawValue
         }
 
         if type(of: heroe) == Mago.self {
@@ -160,16 +172,18 @@ guerrero.saludar()
 guerrero.atacar(enemigo: enemigoSinArma)
 enemigoSinArma.vida
 enemigoSinArma.muerto
+guerrero.atacar(enemigo: enemigoSinArma)
+guerrero.atacar(enemigo: enemigoSinArma)
 
 enemigoConArma.saludar()
 enemigoConArma.vida
-heroe.atacar(enemigo: enemigoSinArma)
+heroe.atacar(enemigo: enemigoConArma)
 enemigoConArma.vida
 enemigoConArma.muerto
-mago.atacar(enemigo: enemigoSinArma)
+mago.atacar(enemigo: enemigoConArma)
 enemigoConArma.vida
 enemigoConArma.muerto
-guerrero.atacar(enemigo: enemigoSinArma)
+guerrero.atacar(enemigo: enemigoConArma)
 enemigoConArma.vida
 enemigoConArma.muerto
 
@@ -178,3 +192,4 @@ heroe.muerto
 enemigoConArma.atacar(heroe: heroe)
 heroe.vida
 heroe.muerto
+heroe.atacar(enemigo: enemigoConArma)

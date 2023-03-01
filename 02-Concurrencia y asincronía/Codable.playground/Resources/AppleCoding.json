@@ -1,0 +1,1342 @@
+[
+    {
+        "id": 4980,
+        "date": "2021-02-05T18:40:55",
+        "date_gmt": "2021-02-05T17:40:55",
+        "guid":
+        {
+            "rendered": "https://applecoding.com/?p=4980"
+        },
+        "modified": "2021-02-05T18:41:15",
+        "modified_gmt": "2021-02-05T17:41:15",
+        "slug": "llega-homebrew-3-soporte-nativo-apple-silicon-actualizar",
+        "status": "publish",
+        "type": "post",
+        "link": "https://applecoding.com/noticias/llega-homebrew-3-soporte-nativo-apple-silicon-actualizar",
+        "title":
+        {
+            "rendered": "Llega Homebrew 3.0.0, con soporte nativo de Apple Silicon"
+        },
+        "content":
+        {
+            "rendered": "\n<p>Si eres desarrollador, sea cual sea la plataforma, <strong>tienes que conocer y usar Homebrew</strong>. Tal como se describe en su página web, Homebrew (o brew o para los amigos), es el gestor de paquetes de sistema desaparecido en macOS.</p>\n\n\n\n<p>Como bien sabemos, en todas las distribuciones Linux tenemos gestores de paquetes por comando (como apt) que nos permiten instalar multitud de paquetes que nos sirven para trabajar. Basado en Ruby, HomeBrew <strong>nos permite instalar casi cada utilidad que podamos necesitar en nuestro Mac</strong>, desde bases de datos pasando por lenguajes, utilidades, gestores&#8230; cada paquete que se puede instalar es una fórmula (o <em>formulae</em>) que se encarga de descargar la solución que queremos, instalarla y permitir que podamos usarla en el sistema sin problemas.</p>\n\n\n\n<p>Aunque no lo sepas o recuerdes, has usado Homebrew si necesitaste instalar gestores de paquetes como <a href=\"https://applecoding.com/guias/instalar-firebase-en-tu-proyecto-en-swift-sin-usar-cocoapods\" target=\"_blank\" rel=\"noreferrer noopener\">CocoaPods</a> (esperamos que no sea ese tu caso, por el bien de tu espíritu). Pero también podremos instalar Python, Clojure, Jenkins (la solución de CI), cask (un instalador de binarios desde línea de comandos que nos evita tener buscar nuestras apps más comunes como Spotify o Google Chrome), bases de datos como PostgreSQL, gestores de tareas hipervitaminados como htop&#8230; en fin. <strong>La herramienta imprescindible que no debe faltar en el Mac de ningún desarrollador para trabajo con el Terminal</strong>.</p>\n\n\n\n<p>Pero teníamos un gran problema: Homebrew no había sido portado a Apple Silicon así que para usarlo debíamos hacer lo que hace la mayoría de desarrolladores con un M1: <strong>crear una copia del Terminal y marcar en su información que se ejecute en modo Rosetta 2</strong>. De esta forma, tenemos dos terminales: uno para los programas nativos de Apple Silicon (el normal) y otro para aquellos programas que funcionen a través de la traducción de Rosetta 2. <strong>Ahí es donde he estado usando estos últimos meses Homebrew en mi Mac mini M1</strong>.</p>\n\n\n\n<figure class=\"wp-block-image size-large\"><a href=\"https://applecoding.com/wp-content/uploads/2021/02/40174-77300-Homebrew-xl.jpg\"><img loading=\"lazy\" width=\"1024\" height=\"478\" src=\"https://applecoding.com/wp-content/uploads/2021/02/40174-77300-Homebrew-xl-1024x478.jpg\" alt=\"Homebrew\" class=\"wp-image-4984\" srcset=\"https://applecoding.com/wp-content/uploads/2021/02/40174-77300-Homebrew-xl-1024x478.jpg 1024w, https://applecoding.com/wp-content/uploads/2021/02/40174-77300-Homebrew-xl-300x140.jpg 300w, https://applecoding.com/wp-content/uploads/2021/02/40174-77300-Homebrew-xl-768x358.jpg 768w, https://applecoding.com/wp-content/uploads/2021/02/40174-77300-Homebrew-xl.jpg 1200w\" sizes=\"(max-width: 1024px) 100vw, 1024px\" /></a></figure>\n\n\n\n<p>Pero hoy, por fin, se acabó la espera: <strong>Homebrew 3.0.0 es la nueva versión mayor cuya principal novedad es que ahora soporta ambos sistemas: Intel y Apple Silicon</strong>.</p>\n\n\n\n<h2>Cómo instalar Homebrew en Apple Silicon</h2>\n\n\n\n<p>La gente de Homebrew ha sido muy inteligente porque, obviamente, saben que muchas fórmulas (paquetes) de los miles que permite instalar esta utilidad, no están portados a Apple Silicon. Por lo tanto, para muchos de nosotros <strong>el hecho que el gestor de paquetes soporte Apple Silicon no significa que el paquete A o B lo soporten por igual</strong>. Cada uno es un programa.</p>\n\n\n\n<p>Por este motivo, han decidido que si queremos usar Homebrew en un ordenador con procesador Apple Silicon, debemos instalar Homebrew de nuevo, desde 0, pero desde el Terminal nativo. ¿Por qué motivo? Porque la instalación antigua con soporte de Intel seguirá donde la tuviéramos (en<code> /usr/local</code>, normalmente), y la nueva se instalará en <code>opt/homebrew</code>, de forma que <strong>tendremos dos instalaciones independientes y complementarias</strong> para según qué caso de fórmulas soportadas o no por la nueva arquitectura de Intel.</p>\n\n\n\n<p>Así que lo único que hemos de hacer es abrir el Terminal (el nativo, no el que usa Apple Silicon) y volver a escribir el comando de instalación como si no tuviéramos Homebrew instalado:</p>\n\n\n\n<pre class=\"EnlighterJSRAW\" data-enlighter-language=\"raw\" data-enlighter-theme=\"\" data-enlighter-highlight=\"\" data-enlighter-linenumbers=\"\" data-enlighter-lineoffset=\"\" data-enlighter-title=\"\" data-enlighter-group=\"\">/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"</pre>\n\n\n\n<p>De esa forma veremos que Homebrew se instala en la mencionada ruta <code>/opt/homebrew</code> y se configura sin problema. <strong>Ahora, cuando el sistema detecte que trabajamos con uno u otro terminal, usará una u otra instalación</strong>.</p>\n\n\n\n<p>Como podemos ver, cada vez más herramientas y apps están disponibles para Apple Silicon (con mayor o menor suerte de implementaciones). <strong>Algo que sin duda es meritorio al interés de los desarrolladores de estar presente en la nueva y revolucionaria plataforma de ordenadores de Apple</strong>.</p>\n\n\n\n<p>Seguiremos informando de grandes cambios como este. Mientras, <strong>un saludo y Good Apple Coding</strong>.</p>\n\n\n\n<p>Enlaces: HomeBrew | <a href=\"https://brew.sh\" target=\"_blank\" rel=\"noreferrer noopener\">Web oficial</a>.</p>\n",
+            "protected": false
+        },
+        "excerpt":
+        {
+            "rendered": "<p>HomeBrew 3.0.0 ya es nativo para Apple Silicon. Te ayudamos a instalarlo y poder empezar con el gestor de paquetes número 1 para macOS.</p>\n",
+            "protected": false
+        },
+        "author": 1,
+        "featured_media": 4982,
+        "comment_status": "open",
+        "ping_status": "closed",
+        "sticky": false,
+        "template": "",
+        "format": "standard",
+        "meta":
+        {
+            "spay_email": ""
+        },
+        "categories":
+        [
+            3
+        ],
+        "tags":
+        [
+            509
+        ],
+        "jetpack_featured_media_url": "https://applecoding.com/wp-content/uploads/2021/02/Screenshot-2021-02-05-at-18.31.26.png",
+        "amp_enabled": true,
+        "_links":
+        {
+            "self":
+            [
+                {
+                    "href": "https://applecoding.com/wp-json/wp/v2/posts/4980"
+                }
+            ],
+            "collection":
+            [
+                {
+                    "href": "https://applecoding.com/wp-json/wp/v2/posts"
+                }
+            ],
+            "about":
+            [
+                {
+                    "href": "https://applecoding.com/wp-json/wp/v2/types/post"
+                }
+            ],
+            "author":
+            [
+                {
+                    "embeddable": true,
+                    "href": "https://applecoding.com/wp-json/wp/v2/users/1"
+                }
+            ],
+            "replies":
+            [
+                {
+                    "embeddable": true,
+                    "href": "https://applecoding.com/wp-json/wp/v2/comments?post=4980"
+                }
+            ],
+            "version-history":
+            [
+                {
+                    "count": 3,
+                    "href": "https://applecoding.com/wp-json/wp/v2/posts/4980/revisions"
+                }
+            ],
+            "predecessor-version":
+            [
+                {
+                    "id": 4985,
+                    "href": "https://applecoding.com/wp-json/wp/v2/posts/4980/revisions/4985"
+                }
+            ],
+            "wp:featuredmedia":
+            [
+                {
+                    "embeddable": true,
+                    "href": "https://applecoding.com/wp-json/wp/v2/media/4982"
+                }
+            ],
+            "wp:attachment":
+            [
+                {
+                    "href": "https://applecoding.com/wp-json/wp/v2/media?parent=4980"
+                }
+            ],
+            "wp:term":
+            [
+                {
+                    "taxonomy": "category",
+                    "embeddable": true,
+                    "href": "https://applecoding.com/wp-json/wp/v2/categories?post=4980"
+                },
+                {
+                    "taxonomy": "post_tag",
+                    "embeddable": true,
+                    "href": "https://applecoding.com/wp-json/wp/v2/tags?post=4980"
+                }
+            ],
+            "curies":
+            [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    },
+    {
+        "id": 4954,
+        "date": "2021-02-02T11:22:09",
+        "date_gmt": "2021-02-02T10:22:09",
+        "guid":
+        {
+            "rendered": "https://applecoding.com/?p=4954"
+        },
+        "modified": "2021-02-02T11:22:31",
+        "modified_gmt": "2021-02-02T10:22:31",
+        "slug": "novedades-swift-5-4-i-sintaxis-extendida-encadenamiento-miembros-implicitos",
+        "status": "publish",
+        "type": "post",
+        "link": "https://applecoding.com/swift/novedades-swift-5-4-i-sintaxis-extendida-encadenamiento-miembros-implicitos",
+        "title":
+        {
+            "rendered": "Novedades en Swift 5.4 (I), sintaxis extendida en el encadenamiento de miembros implícitos"
+        },
+        "content":
+        {
+            "rendered": "\n<p><strong>Swift 5.4 ya está entre nosotros, como parte de la beta de Xcode 12.5</strong> que ya se puede descargar desde el portal de desarrolladores de Apple. Y nos trae importantes novedades. La principal de todas (aceptada pero aún no implementada a fecha de publicación de este artículo) es una nueva capa de programación asíncrona con las instrucciones <code data-enlighter-language=\"generic\" class=\"EnlighterJSRAW\">async</code> y <code data-enlighter-language=\"generic\" class=\"EnlighterJSRAW\">await</code>, unido a una nueva forma de definir funciones asíncronas en una forma similar a como funcionan otros lenguajes como C#.</p>\n\n\n\n<p>De aquí a su publicación para, probablemente, finales del mes de marzo de 2021, <strong>vamos a hacer una serie de artículos explicando las novedades que nos trae esta nueva versión</strong> menor de Swift que sigue puliendo y mejorando el lenguaje.</p>\n\n\n\n<p>La primera novedad de la que vamos a hablar es algo que suena complejo pero es una novedad pequeña pero muy interesante para facilitar que nuestro código sea más limpio: <strong>sintaxis extendida en el encadenamiento de miembros implícitos</strong>.</p>\n\n\n\n<h2>Funcionamiento actual </h2>\n\n\n\n<p>Cuando en Swift uso un constructor de un tipo de dato (como el propio <code data-enlighter-language=\"generic\" class=\"EnlighterJSRAW\">init</code> o incluso una función de estática o de tipo), puedo <strong>eliminar de forma implícita el nombre del tipo</strong> si este ya está indicado en el constructor.</p>\n\n\n\n<p>Vamos a suponer que tengo<strong> un <code data-enlighter-language=\"generic\" class=\"EnlighterJSRAW\">struct</code> llamado <code data-enlighter-language=\"generic\" class=\"EnlighterJSRAW\">Algo</code> que contiene una propiedad no inicializada, un método y además una función o método estático</strong> (que pertenece a la estructura, no a la instancia) que nos permite generar una instancia de <code data-enlighter-language=\"generic\" class=\"EnlighterJSRAW\">Algo</code> con un valor para esa propiedad por defecto.</p>\n\n\n\n<pre class=\"EnlighterJSRAW\" data-enlighter-language=\"generic\" data-enlighter-theme=\"\" data-enlighter-highlight=\"\" data-enlighter-linenumbers=\"\" data-enlighter-lineoffset=\"\" data-enlighter-title=\"\" data-enlighter-group=\"\">struct Algo {\n    static func creando() -> Algo {\n        Algo(propiedad: 3)\n    }\n    var propiedad:Int\n    func metodo() {\n        \n    }\n}</pre>\n\n\n\n<p>Cuando inicializo ese <code data-enlighter-language=\"generic\" class=\"EnlighterJSRAW\">Algo</code> en dos instancias, <code data-enlighter-language=\"generic\" class=\"EnlighterJSRAW\">algo1</code> y <code data-enlighter-language=\"generic\" class=\"EnlighterJSRAW\">algo2</code>, puedo hacerlo de cualquiera de estas dos formas:</p>\n\n\n\n<pre class=\"EnlighterJSRAW\" data-enlighter-language=\"generic\" data-enlighter-theme=\"\" data-enlighter-highlight=\"\" data-enlighter-linenumbers=\"\" data-enlighter-lineoffset=\"\" data-enlighter-title=\"\" data-enlighter-group=\"\">var algo1 = Algo(propiedad: 4)\nvar algo2 = Algo.creando()</pre>\n\n\n\n<p>O bien uso el inicializador sintetizado del <code data-enlighter-language=\"generic\" class=\"EnlighterJSRAW\">struct</code>, que me pide la propiedad no inicializada como parámetro, o uso la función o método estático <code data-enlighter-language=\"generic\" class=\"EnlighterJSRAW\">creando()</code>, para obtener una inicialización que de un valor por defecto a ese parámetro no inicializado.</p>\n\n\n\n<p>El uso de inicializadores o miembros implícitos supone que <strong>cuando el tipo está definido en su declaración, puedo (al igual que haría con una enumeración) acudir a los métodos o inicializadores de los tipos</strong>, sin necesidad de volver a indicar el nombre del mismo.</p>\n\n\n\n<pre class=\"EnlighterJSRAW\" data-enlighter-language=\"generic\" data-enlighter-theme=\"\" data-enlighter-highlight=\"\" data-enlighter-linenumbers=\"\" data-enlighter-lineoffset=\"\" data-enlighter-title=\"\" data-enlighter-group=\"\">var algo3:Algo = .creando()\nvar algo4:Algo = .init(propiedad: 4)</pre>\n\n\n\n<p>La gran ventaja de usar los miembros implícitos, es que si tenemos un tipo de dato que ya está declarado porque es la propiedad de una estructura instanciada, <strong>podemos acceder a sus método o inicializadores sin necesidad de indicar el tipo de dato</strong>. </p>\n\n\n\n<pre class=\"EnlighterJSRAW\" data-enlighter-language=\"generic\" data-enlighter-theme=\"\" data-enlighter-highlight=\"\" data-enlighter-linenumbers=\"\" data-enlighter-lineoffset=\"\" data-enlighter-title=\"\" data-enlighter-group=\"\">view.backgroundColor = .systemBackground</pre>\n\n\n\n<p>La forma más fácil de verlo es cómo podemos usar el inicializador <code data-enlighter-language=\"generic\" class=\"EnlighterJSRAW\">.systemBackground</code> (por ejemplo) para definir un tipo <code data-enlighter-language=\"generic\" class=\"EnlighterJSRAW\">UIColor</code> dentro del uso de <code data-enlighter-language=\"generic\" class=\"EnlighterJSRAW\">UIKit</code>. Igual que podemos indicar un color predefinido como <code data-enlighter-language=\"generic\" class=\"EnlighterJSRAW\">.black</code>.</p>\n\n\n\n<h2>El problema implícito</h2>\n\n\n\n<p>Sin duda esta funcionalidad es genial, pero tiene un problema: no podemos usar estos constructores implícitos de forma encadenada a las interfaces fluidas porque entonces nos obliga a indicar el tipo original.</p>\n\n\n\n<p>Veamos el caso cuando usamos un color en SwiftUI, por ejemplo. Usamos el constructor implícito del color para indicar que este es <code data-enlighter-language=\"generic\" class=\"EnlighterJSRAW\">.black</code> o <code data-enlighter-language=\"generic\" class=\"EnlighterJSRAW\">.white</code>, por ejemplo. Pero sobre el color, luego podemos modificar su opacidad con una función unida al tipo <code data-enlighter-language=\"generic\" class=\"EnlighterJSRAW\">Color</code>. El problema es que hemos de indicar el tipo <code data-enlighter-language=\"generic\" class=\"EnlighterJSRAW\">Color</code> de forma explícita para que funcione.</p>\n\n\n\n<pre class=\"EnlighterJSRAW\" data-enlighter-language=\"generic\" data-enlighter-theme=\"\" data-enlighter-highlight=\"\" data-enlighter-linenumbers=\"\" data-enlighter-lineoffset=\"\" data-enlighter-title=\"\" data-enlighter-group=\"\">Text(\"Ola k ase\")\")\n    .foregroundColor(.blue.opacity(0.5))</pre>\n\n\n\n<p>Esta unión entre el constructor <code data-enlighter-language=\"generic\" class=\"EnlighterJSRAW\">.blue</code> implícito y el modificador .opacity, <strong>en Swift 5.3 o versiones anteriores daría un error</strong>. Tendríamos que indicar el tipo de forma explícita: <code data-enlighter-language=\"generic\" class=\"EnlighterJSRAW\">Color.blue.opacity(0.5)</code>. Sin embargo, ahora no es necesario y el sistema lo entenderá.</p>\n\n\n\n<p><strong>Esto es sumamente útil para el trabajo con SwiftUI</strong>, como en los colores, animaciones y muchas más modificadores que podemos usar y nos ayuda a usar los constructores implícitos de forma más cómoda.</p>\n\n\n\n<p>Para probar esto, <strong>solo tenéis que bajaros de Apple Xcode 12.5 y empezar a usarlo</strong>, pero eso sí, recordad que la versión de primavera de Xcode obliga al uso de la última versión de macOS, por lo que esta versión 12.5 solo funcionará en macOS Big Sur (macOS 11). No dejéis de compartir este artículo con vuestros amigos en redes sociales y mencionarnos como <a href=\"http://twitter.com/apple_coding\" target=\"_blank\" rel=\"noreferrer noopener\">@apple_coding</a> en Twitter. <strong>Un saludo y Good Apple Coding</strong>.</p>\n",
+            "protected": false
+        },
+        "excerpt":
+        {
+            "rendered": "<p>Revisamos las novedades de Swift 5.4, empezando por la sintaxis extendida en el encadenamiento de miembros implícitos. Una función muy interesante y práctica.</p>\n",
+            "protected": false
+        },
+        "author": 1,
+        "featured_media": 4977,
+        "comment_status": "open",
+        "ping_status": "closed",
+        "sticky": false,
+        "template": "",
+        "format": "standard",
+        "meta":
+        {
+            "spay_email": ""
+        },
+        "categories":
+        [
+            304
+        ],
+        "tags":
+        [
+            507
+        ],
+        "jetpack_featured_media_url": "https://applecoding.com/wp-content/uploads/2021/02/Screenshot-2021-02-02-at-11.18.18.jpg",
+        "amp_enabled": true,
+        "_links":
+        {
+            "self":
+            [
+                {
+                    "href": "https://applecoding.com/wp-json/wp/v2/posts/4954"
+                }
+            ],
+            "collection":
+            [
+                {
+                    "href": "https://applecoding.com/wp-json/wp/v2/posts"
+                }
+            ],
+            "about":
+            [
+                {
+                    "href": "https://applecoding.com/wp-json/wp/v2/types/post"
+                }
+            ],
+            "author":
+            [
+                {
+                    "embeddable": true,
+                    "href": "https://applecoding.com/wp-json/wp/v2/users/1"
+                }
+            ],
+            "replies":
+            [
+                {
+                    "embeddable": true,
+                    "href": "https://applecoding.com/wp-json/wp/v2/comments?post=4954"
+                }
+            ],
+            "version-history":
+            [
+                {
+                    "count": 5,
+                    "href": "https://applecoding.com/wp-json/wp/v2/posts/4954/revisions"
+                }
+            ],
+            "predecessor-version":
+            [
+                {
+                    "id": 4978,
+                    "href": "https://applecoding.com/wp-json/wp/v2/posts/4954/revisions/4978"
+                }
+            ],
+            "wp:featuredmedia":
+            [
+                {
+                    "embeddable": true,
+                    "href": "https://applecoding.com/wp-json/wp/v2/media/4977"
+                }
+            ],
+            "wp:attachment":
+            [
+                {
+                    "href": "https://applecoding.com/wp-json/wp/v2/media?parent=4954"
+                }
+            ],
+            "wp:term":
+            [
+                {
+                    "taxonomy": "category",
+                    "embeddable": true,
+                    "href": "https://applecoding.com/wp-json/wp/v2/categories?post=4954"
+                },
+                {
+                    "taxonomy": "post_tag",
+                    "embeddable": true,
+                    "href": "https://applecoding.com/wp-json/wp/v2/tags?post=4954"
+                }
+            ],
+            "curies":
+            [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    },
+    {
+        "id": 4958,
+        "date": "2021-01-26T22:42:40",
+        "date_gmt": "2021-01-26T21:42:40",
+        "guid":
+        {
+            "rendered": "https://applecoding.com/?p=4958"
+        },
+        "modified": "2021-01-26T23:53:10",
+        "modified_gmt": "2021-01-26T22:53:10",
+        "slug": "apple-actualiza-certificado-intermedio-firma-apps",
+        "status": "publish",
+        "type": "post",
+        "link": "https://applecoding.com/noticias/apple-actualiza-certificado-intermedio-firma-apps",
+        "title":
+        {
+            "rendered": "Apple actualiza el certificado intermedio de firma de apps"
+        },
+        "content":
+        {
+            "rendered": "\n<p>Una de las partes esenciales de cualquiera de nuestra apps que quiera publicarse en las tiendas de iOS, macOS, tvOS o watchOS (sí, recordad que hay tienda independiente de watchOS), es <strong>la firma digital</strong>. </p>\n\n\n\n<h2>¿Qué es la firma digital?</h2>\n\n\n\n<p>La firma <strong>es el proceso por el que se calcula un <em>hash</em> o valor de verificación</strong>, que es único para cada fichero basado en su contenido. De esta forma, cuando un solo número, un solo <em>byte</em> cambia en nuestro fichero, <strong>la firma deja de ser válida porque no coincide el valor de verificación guardado con el nuevo obtenido de un fichero modificado</strong>.</p>\n\n\n\n<p>¿Y cómo se previene que alguien modifique el <em>hash</em> posteriormente a su cálculo para engañar a cualquier comprobación? <strong>Firmándolo digitalmente</strong>. La firma digital se basa en una autoridad que emite <strong>un certificado intermedio</strong> que permite a su vez, generar otros certificados que se componen de clave pública y privada.</p>\n\n\n\n<figure class=\"wp-block-image size-large\"><a href=\"https://applecoding.com/wp-content/uploads/2021/01/cyber-security-cybercrime-cyberspace-hacking-hacke-MJQ4T6B.jpg\"><img loading=\"lazy\" width=\"1024\" height=\"768\" src=\"https://applecoding.com/wp-content/uploads/2021/01/cyber-security-cybercrime-cyberspace-hacking-hacke-MJQ4T6B-1024x768.jpg\" alt=\"Firma digital\" class=\"wp-image-4961\" srcset=\"https://applecoding.com/wp-content/uploads/2021/01/cyber-security-cybercrime-cyberspace-hacking-hacke-MJQ4T6B-1024x768.jpg 1024w, https://applecoding.com/wp-content/uploads/2021/01/cyber-security-cybercrime-cyberspace-hacking-hacke-MJQ4T6B-300x225.jpg 300w, https://applecoding.com/wp-content/uploads/2021/01/cyber-security-cybercrime-cyberspace-hacking-hacke-MJQ4T6B-768x576.jpg 768w, https://applecoding.com/wp-content/uploads/2021/01/cyber-security-cybercrime-cyberspace-hacking-hacke-MJQ4T6B.jpg 1309w\" sizes=\"(max-width: 1024px) 100vw, 1024px\" /></a></figure>\n\n\n\n<p>Para el proceso de validación de las apps y comprobar que el fichero en sí no haya sido modificado, <strong>Apple usa un sistema de firma por clave privada</strong>. Este se basa en que dicha clave privada (que no debe ser expuesta y siempre guardada preciosamente), puede ser usada para firmar cualquier cosa. ¿Y qué es firmar? Es cifrar. <strong>Cifrar un dato con una clave privada</strong>. ¿Qué se cifra? El valor del <em>hash</em>. </p>\n\n\n\n<p>De esta forma, cuando queremos saber cuál es el valor del <em>hash</em> que tenía un fichero cuando se firmó, para comprobarlo en cualquier momento, <strong>tenemos que descifrar aquello que hemos cifrado</strong> (que hemos firmado). ¿Y cómo se puede descifrar algo firmado con una clave privada de firma de un certificado? <strong>Con su clave pública. La pública no permite cifrar nada: solo descifrar</strong>.</p>\n\n\n\n<figure class=\"wp-block-image size-large\"><a href=\"https://applecoding.com/wp-content/uploads/2021/01/signature.png\"><img loading=\"lazy\" width=\"1024\" height=\"263\" src=\"https://applecoding.com/wp-content/uploads/2021/01/signature-1024x263.png\" alt=\"Firma un documento\" class=\"wp-image-4962\" srcset=\"https://applecoding.com/wp-content/uploads/2021/01/signature-1024x263.png 1024w, https://applecoding.com/wp-content/uploads/2021/01/signature-300x77.png 300w, https://applecoding.com/wp-content/uploads/2021/01/signature-768x198.png 768w, https://applecoding.com/wp-content/uploads/2021/01/signature-1536x395.png 1536w, https://applecoding.com/wp-content/uploads/2021/01/signature.png 1578w\" sizes=\"(max-width: 1024px) 100vw, 1024px\" /></a><figcaption>Firma de un documento de firma digital</figcaption></figure>\n\n\n\n<p>La forma más fácil de entenderlo es como si tuviéramos un compresor (un zip) que codifica con clave todo lo que comprime. Y solo podemos descomprimirlo usando otro programa (un unzip) que usa la misma clave que se usó para comprimir. En eso se basa comprobar una firma: <strong>descifro el <em>hash</em> que se cifró, calculo el del fichero que quiero verificar y si coinciden, es que el fichero no se ha modificado</strong>. Si los <em>hashes</em> no coinciden, entonces es que el fichero ha sido modificado: la firma no es válida.</p>\n\n\n\n<figure class=\"wp-block-image size-large\"><a href=\"https://applecoding.com/wp-content/uploads/2021/01/verify-signature.png\"><img loading=\"lazy\" width=\"1024\" height=\"263\" src=\"https://applecoding.com/wp-content/uploads/2021/01/verify-signature-1024x263.png\" alt=\"\" class=\"wp-image-4963\" srcset=\"https://applecoding.com/wp-content/uploads/2021/01/verify-signature-1024x263.png 1024w, https://applecoding.com/wp-content/uploads/2021/01/verify-signature-300x77.png 300w, https://applecoding.com/wp-content/uploads/2021/01/verify-signature-768x198.png 768w, https://applecoding.com/wp-content/uploads/2021/01/verify-signature-1536x395.png 1536w, https://applecoding.com/wp-content/uploads/2021/01/verify-signature.png 1578w\" sizes=\"(max-width: 1024px) 100vw, 1024px\" /></a><figcaption>Verificación de firma digital</figcaption></figure>\n\n\n\n<p>Como el <em>hash</em> viene cifrado por una clave privada, <strong>el emisor del certificado que cifró ese dato es el que se reconoce como firmante</strong>. Se ha firmado con un certificado de X (de Apple en el caso del App Store). </p>\n\n\n\n<h2>Cambio en el certificado intermedio</h2>\n\n\n\n<p><strong>El certificado raíz de Apple, es el que valida la autoridad certificadora que es la propia compañía</strong>. Es un certificado cuya clave pública es capaz de descifrar y validar todos los certificados finales de usuario que se usan (como los que usamos para firmar apps). </p>\n\n\n\n<p>Este certificado raíz tiene una parte crítica que, en el caso de cualquier empresa, debe estar escondida bajo 7.000 sellos en una cámara acorazada en las profundidades del infierno y con un ejército de demonios que llevan eones sin comer vigilándolo: <strong>su clave privada</strong>. Es aquella que es capaz de generar los certificados que validará la autoridad certificadora.</p>\n\n\n\n<div class=\"wp-block-image\"><figure class=\"alignright size-large is-resized\"><a href=\"https://applecoding.com/wp-content/uploads/2021/01/Certificate-Chain.jpg\"><img loading=\"lazy\" src=\"https://applecoding.com/wp-content/uploads/2021/01/Certificate-Chain.jpg\" alt=\"Estructura de certificados\" class=\"wp-image-4964\" width=\"-275\" height=\"-214\" srcset=\"https://applecoding.com/wp-content/uploads/2021/01/Certificate-Chain.jpg 531w, https://applecoding.com/wp-content/uploads/2021/01/Certificate-Chain-300x234.jpg 300w\" sizes=\"(max-width: 531px) 100vw, 531px\" /></a><figcaption>Estructura de certificados</figcaption></figure></div>\n\n\n\n<p>Pero <strong>con el propósito de no comprometer esa clave privada, lo que hacen las autoridades certificadoras es crear certificados intermedios</strong>. Un certificado que se genera a partir de la clave privada del certificado raíz, que se valida con su clave pública, y que permite a su vez generar un nuevo nivel de certificados: <strong>los certificados de usuario final</strong>. Aquellos que son los que usamos para firmar nuestras apps y que cada desarrollador con cuenta de pago tiene.</p>\n\n\n\n<p>Pues bien, después de explicar todo esto ahora podemos decir que <strong>Apple actualizará su actual certificado intermedio que expira (deja de tener validez) el 20 de febrero de 2023</strong>. Anticipándose en 2 años para prevenir problemas de expiración de certificados generados con ese intermedio que nunca podrían tener una validez mayor que el certificado del que proceden.</p>\n\n\n\n<p><strong>¿Supone eso algún problema en nuestras cuentas, apps o firmas de las mismas? No.</strong> Desde el próximo 28 de enero, Xcode se encargará generar el nuevo certificado basado en el nuevo intermedio cuando caduque el actual que usamos y todos tan felices.</p>\n\n\n\n<p>Eso sí, <strong>siempre que usemos Xcode 11.4.1 o superior</strong>. Si usamos una versión anterior tenemos un problema porque Xcode dejará de ser capaz de gestionar automáticamente y firmar desde el IDE cualquier app que queramos subir. <strong>Si usamos una versión anterior a Xcode 11.4.1, tendremos que bajar el nuevo certificado generado por el nuevo intermedio de forma manual y usar la línea de comandos de Xcode para firmar las apps</strong>. Ya no podrá hacerse con Xcode. Es importante tener esto en cuenta.</p>\n\n\n\n<figure class=\"wp-block-image size-large\"><a href=\"https://applecoding.com/wp-content/uploads/2021/01/internet-hacker-workplace-in-dark-office-nobody-BKL3EUW.jpg\"><img loading=\"lazy\" width=\"1024\" height=\"681\" src=\"https://applecoding.com/wp-content/uploads/2021/01/internet-hacker-workplace-in-dark-office-nobody-BKL3EUW-1024x681.jpg\" alt=\"Firma Digital\" class=\"wp-image-4965\" srcset=\"https://applecoding.com/wp-content/uploads/2021/01/internet-hacker-workplace-in-dark-office-nobody-BKL3EUW-1024x681.jpg 1024w, https://applecoding.com/wp-content/uploads/2021/01/internet-hacker-workplace-in-dark-office-nobody-BKL3EUW-300x200.jpg 300w, https://applecoding.com/wp-content/uploads/2021/01/internet-hacker-workplace-in-dark-office-nobody-BKL3EUW-768x511.jpg 768w, https://applecoding.com/wp-content/uploads/2021/01/internet-hacker-workplace-in-dark-office-nobody-BKL3EUW.jpg 1210w\" sizes=\"(max-width: 1024px) 100vw, 1024px\" /></a><figcaption>Firma Digital</figcaption></figure>\n\n\n\n<p>Si esto es demasiado complejo, <strong>nuestra otra solución es generar el <em>Archive</em> con la versión que usemos de Xcode anterior a la 11.4.1</strong>, y luego <strong>usar una versión posterior para firmar y subir</strong> (o distribuir) esa app archivada en una versión obsoleta.</p>\n\n\n\n<p>Pero ojo, si usamos cualquiera de estos servicios: </p>\n\n\n\n<ul><li>Apple Push Notification service SSL (Sandbox)</li><li>Apple Push Notification service SSL (Sandbox y Producción)</li><li>macOS Apple Push Notification service SSL (Producción)</li><li>Website Push ID</li><li>Servicios WatchKit</li><li>Servicios VoIP</li><li>Pass Type ID</li><li>Pass Type ID con soporte NFC</li><li>App Store&nbsp;Receipt Signing</li></ul>\n\n\n\n<p><strong>Estos servicios aún seguirán usando certificados generados por el anterior intermedio</strong>, por lo que deberemos conservar el certificado antiguo y el nuevo para cada caso completo. Al menos hasta finales de año cuando se actualizarán estos servicios con el nuevo certificado intermedio.</p>\n\n\n\n<p>No es un cambio que tal vez sea muy crítico, pero es importante estar al tanto de estos cambios y entenderlo para nuestro trabajo. Y poco más, espero que os haya gustado el artículo, no olvidéis compartirlo en redes sociales para informar a vuestros compañeros y amigos de este cambio y, como decimos siempre, <strong>un saludo y Good Apple Coding</strong>.</p>\n\n\n\n<p><strong>Nota oficial de Apple</strong>: <a href=\"https://developer.apple.com/support/wwdr-intermediate-certificate/\" target=\"_blank\" rel=\"noreferrer noopener\">Apple Worldwide Developer Relations Intermediate Certificate</a>.</p>\n",
+            "protected": false
+        },
+        "excerpt":
+        {
+            "rendered": "<p>Apple anuncia la actualización de su certificado intermedio de firma para las apps. ¿Qué significa eso? ¿Me afecta? Te explicamos todo para lo que entiendas.</p>\n",
+            "protected": false
+        },
+        "author": 1,
+        "featured_media": 4959,
+        "comment_status": "open",
+        "ping_status": "closed",
+        "sticky": false,
+        "template": "",
+        "format": "standard",
+        "meta":
+        {
+            "spay_email": ""
+        },
+        "categories":
+        [
+            3
+        ],
+        "tags":
+        [
+            506,
+            329
+        ],
+        "jetpack_featured_media_url": "https://applecoding.com/wp-content/uploads/2021/01/partial-view-of-woman-typing-on-laptop-at-tabletop-CT7C73P.jpg",
+        "amp_enabled": true,
+        "_links":
+        {
+            "self":
+            [
+                {
+                    "href": "https://applecoding.com/wp-json/wp/v2/posts/4958"
+                }
+            ],
+            "collection":
+            [
+                {
+                    "href": "https://applecoding.com/wp-json/wp/v2/posts"
+                }
+            ],
+            "about":
+            [
+                {
+                    "href": "https://applecoding.com/wp-json/wp/v2/types/post"
+                }
+            ],
+            "author":
+            [
+                {
+                    "embeddable": true,
+                    "href": "https://applecoding.com/wp-json/wp/v2/users/1"
+                }
+            ],
+            "replies":
+            [
+                {
+                    "embeddable": true,
+                    "href": "https://applecoding.com/wp-json/wp/v2/comments?post=4958"
+                }
+            ],
+            "version-history":
+            [
+                {
+                    "count": 6,
+                    "href": "https://applecoding.com/wp-json/wp/v2/posts/4958/revisions"
+                }
+            ],
+            "predecessor-version":
+            [
+                {
+                    "id": 4971,
+                    "href": "https://applecoding.com/wp-json/wp/v2/posts/4958/revisions/4971"
+                }
+            ],
+            "wp:featuredmedia":
+            [
+                {
+                    "embeddable": true,
+                    "href": "https://applecoding.com/wp-json/wp/v2/media/4959"
+                }
+            ],
+            "wp:attachment":
+            [
+                {
+                    "href": "https://applecoding.com/wp-json/wp/v2/media?parent=4958"
+                }
+            ],
+            "wp:term":
+            [
+                {
+                    "taxonomy": "category",
+                    "embeddable": true,
+                    "href": "https://applecoding.com/wp-json/wp/v2/categories?post=4958"
+                },
+                {
+                    "taxonomy": "post_tag",
+                    "embeddable": true,
+                    "href": "https://applecoding.com/wp-json/wp/v2/tags?post=4958"
+                }
+            ],
+            "curies":
+            [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    },
+    {
+        "id": 4933,
+        "date": "2020-09-10T09:54:52",
+        "date_gmt": "2020-09-10T07:54:52",
+        "guid":
+        {
+            "rendered": "https://applecoding.com/?p=4933"
+        },
+        "modified": "2020-09-10T09:56:22",
+        "modified_gmt": "2020-09-10T07:56:22",
+        "slug": "firebase-instalacion-con-swift-package-manager-y-uso-en-swiftui-con-ios-14-y-xcode-12",
+        "status": "publish",
+        "type": "post",
+        "link": "https://applecoding.com/tutoriales/firebase-instalacion-con-swift-package-manager-y-uso-en-swiftui-con-ios-14-y-xcode-12",
+        "title":
+        {
+            "rendered": "Firebase, instalación con Swift Package Manager y uso en SwiftUI con iOS 14 y Xcode 12"
+        },
+        "content":
+        {
+            "rendered": "\n<p>Lo confesamos: <strong>en Apple Coding somos enemigos acérrimos del famoso CocoaPods</strong>. No nos gusta nada. Hemos sufrido tanto con él y hemos encontrado muchas extrañezas con los años. Lo sentimos por aquellos que les guste: nosotros lo hemos usado por exigencias de clientes o APIs que solo aportaban esa forma de instalar casi desde su lanzamiento en 2011, y las pesadillas han sido muchas y terroríficas.</p>\n\n\n\n<figure class=\"wp-block-image size-large\"><img loading=\"lazy\" width=\"760\" height=\"535\" src=\"https://applecoding.com/wp-content/uploads/2020/09/say-cocoa-pods-again.jpg\" alt=\"¡Di CocoaPods otra vez!\" class=\"wp-image-4934\" srcset=\"https://applecoding.com/wp-content/uploads/2020/09/say-cocoa-pods-again.jpg 760w, https://applecoding.com/wp-content/uploads/2020/09/say-cocoa-pods-again-300x211.jpg 300w\" sizes=\"(max-width: 760px) 100vw, 760px\" /></figure>\n\n\n\n<p>Por este motivo, hace un tiempo hicimos un tutorial que os gustó bastante, sobre cómo instalar una de las APIs más usadas a nivel profesional <strong>sin usar este gestor de dependencias: <a href=\"https://applecoding.com/guias/instalar-firebase-en-tu-proyecto-en-swift-sin-usar-cocoapods\" target=\"_blank\" rel=\"noreferrer noopener\">Firebase sin CocoaPods</a></strong>.</p>\n\n\n\n<p>La gran noticia, es que Google se ha puesto las pilas y ha presentado el soporte de instalación (en <em>beta</em>, por ahora) de Firebase (todas sus APIs) a través del <strong>gestor de paquetes oficial del lenguaje Swift: Swift Package Manager</strong>. Y vamos a enseñaros cómo usar este y descubriréis un nuevo mundo de gozo y regocijo.</p>\n\n\n\n<h2>¿Por qué ha tardado tanto?</h2>\n\n\n\n<p>SPM o Swift Package Manager, es el gestor de paquetes (dependencias) oficial del lenguaje Swift. Un gestor que lleva varios años con nosotros, pero que <strong>hasta el pasado año con Xcode 11 no ganó integración con el IDE de Apple</strong>. Este motivo, imposibilitaba que pudiera usarse como gestor de dependencias (paquetes) para cualquier proyecto en Xcode.</p>\n\n\n\n<p>El pasado año, con la llegada de Swift 5.1, SPM llegó a Xcode 11 pero había una pega: solo aceptaba APIs (librerías) que fueran 100% código fuente. No podían tener recursos binarios, ni localización y mucho menos (aquí el <em>quid</em> de la cuestión), librerías binarias. Como todos sabemos, Firebase está precompilado y se distribuye como librería binaria, así que <strong>no podíamos usar SPM para usar Firebase</strong>.</p>\n\n\n\n<blockquote class=\"wp-block-quote is-style-large\"><p>Di no a CocoaPods&#8230; vive un mundo libre de ataduras de dependencias, conflictos y errores aleatorios sin sentido.</p></blockquote>\n\n\n\n<p>Esto, por fortuna, ha cambiado este año con la llegada de Swift 5.3 y Xcode 12. <strong>Ahora SPM sí soporta recursos binarios (imágenes, ficheros de cualquier tipo e incluso .storyboards)</strong>, soporta localizar estos recursos y, lo más importante, también librerías en formato binario ya compiladas. Librerías que pueden proceder de cualquier lenguaje compatible como C, C++ u Objective-C, y que <strong>deben estar en un formato que sea entendible por el compilador LLVM</strong> para incluirlas como dependencias binarias en nuestros proyectos.</p>\n\n\n\n<p>Por este motivo, ahora ya podemos incluir Firebase en Swift Package Manager. Siempre, obviamente, contando con que <strong>Google ha creado la conveniente recopilación de repositorios de código y fuentes binarias</strong> para cada uno de los componentes de este enorme servicio de APIs de Google.</p>\n\n\n\n<h2>¿Cómo instalamos Firebase con SPM?</h2>\n\n\n\n<p>La instalación es bastante simple, y solo tiene un paso «extraño» que nos obligará a tocar una línea de las opciones en los <em>Build Setiings</em> del proyecto. Pero nada que nos quite el sueño (menos que CocoaPods, seguro).</p>\n\n\n\n<blockquote class=\"wp-block-quote is-style-large\"><p>La única pega de usar SPM con Firebase, es que (por ahora) tenemos que modificar un parámetro en los <strong>Build Settings</strong> si usamos la API de analíticas. Pero nada que sea traumático.</p></blockquote>\n\n\n\n<p>Lo primero es que no vamos a repetir cómo configurar tu proyecto y bajarte el fichero de configuración correspondiente: <strong>puedes consultar este paso en el anterior tutorial</strong>, que te volvemos a referenciar aquí: <a href=\"https://applecoding.com/guias/instalar-firebase-en-tu-proyecto-en-swift-sin-usar-cocoapods\" target=\"_blank\" rel=\"noreferrer noopener\">pulsar para ver el tutorial</a>.</p>\n\n\n\n<p>Si vamos a la página de <a href=\"https://firebase.google.com/docs/ios/setup\" target=\"_blank\" rel=\"noreferrer noopener\">configuración de los proyectos iOS en Firebase</a> (la versión en inglés) nos indica que disponen de soporte en beta para Swift Package Manager. Allí nos manda directamente a la documentación en GitHub, donde nos informa que <strong>desde la versión 6.31.0 podemos usar SPM para Firebase, siempre a partir de Xcode 12 beta 4</strong>. Si queremos usarlo con SwiftUI, deberá ser la beta 5.</p>\n\n\n\n<p>Por desgracia <strong>en esta primera beta tenemos algunas limitaciones</strong>, como la necesidad de configurar las opciones del enlazador del compilador si queremos usar Analytics, el no soporte de proyectos watchOS o la no inclusión (todavía) de las librerías Messaging, Performance, Firebase ML y App Distribution. </p>\n\n\n\n<p>Si nuestro proyecto usaba previamente CocoaPods, <strong>deberemos quitarlo usando el comando: <code>pod deintegrate</code></strong>. Si sentís una sensación de placer lujurioso al hacerlo, es normal, no os preocupéis.</p>\n\n\n\n<figure class=\"wp-block-image\"><img src=\"https://github.com/firebase/firebase-ios-sdk/raw/master/docs/resources/SPMAddPackage.png\" alt=\"Menú File, Swift Packages, Add Package Dependency.\"/></figure>\n\n\n\n<p>Una vez hecho, nos vamos a las opciones del proyecto Xcode y allí a <em>Swift Packages</em>, para luego pulsar el +. También podemos hacerlo en el menú <em>File</em>, <em>Swift Packages</em>, <em>Add Package Dependency</em>.</p>\n\n\n\n<p>En el diálogo emergente que aparecerá ponemos: <code>https://github.com/firebase/firebase-ios-sdk.git</code>. </p>\n\n\n\n<figure class=\"wp-block-image\"><img src=\"https://github.com/firebase/firebase-ios-sdk/raw/master/docs/resources/SPMChoose.png\" alt=\"Accedemos a la URL donde está todo el repositorio de Firebase para luego elegir las dependencias de la misma que queremos.\"/></figure>\n\n\n\n<p>Lo siguiente que nos pedirá es<strong> la versión del <em>branch</em></strong> del queremos extraer la versión. En este caso, hasta que no salga la versión final de Xcode, tendremos que usar el branch beta: <code>6.31-spm-beta</code>.</p>\n\n\n\n<figure class=\"wp-block-image\"><img src=\"https://github.com/firebase/firebase-ios-sdk/raw/master/docs/resources/SPMSelect.png\" alt=\"Hay que usar el branch 6.31-spm-beta.\"/></figure>\n\n\n\n<p>Hecho esto, veremos un listado de todas las librerías que podemos instalar y nos pedirá que seleccionemos (en caso de haber más de uno) sobre qué <em>target</em> queremos instalar la dependencia.</p>\n\n\n\n<figure class=\"wp-block-image\"><img src=\"https://github.com/firebase/firebase-ios-sdk/raw/master/docs/resources/SPMProducts.png\" alt=\"Listado de las diferentes APIs de Firebase que podemos instalar.\"/></figure>\n\n\n\n<p>Como ya hemos comentado, poco más hay que hacer. Eso sí, si vamos a usar la librería <em>FirebaseAnalytics</em>,<strong> deberemos poner el <em>flag</em> del enlazador del compilador</strong>, como cuando se instalaba manualmente la librería. Pulsamos en <em>Build Settings</em>, buscamos <em>other</em>, vamos a <em>Other Linker Flags</em> y añadimos <code>-ObjC</code> (tal cual, respetando mayúsculas y minúsculas).</p>\n\n\n\n<figure class=\"wp-block-image\"><img src=\"https://github.com/firebase/firebase-ios-sdk/raw/master/docs/resources/SPMObjC.png\" alt=\"Configuración de Build Settings para poner el indicador Other Linker Flags.\"/></figure>\n\n\n\n<p>No hay nada más. Ya tenemos Firebase listo para usar en Xcode 12 beta con Swift Package Manager y podemos importar sus librerías. Y no os preocupéis, <strong>cuando esté disponible la versión final actualizaremos este tutorial con el proceso final</strong>.</p>\n\n\n\n<h2>Quiero usar Firebase con SwiftUI 2 pero, ¿dónde está mi AppDelegate?</h2>\n\n\n\n<p>Si hemos creado un proyecto con SwiftUI 2, usando el nuevo ciclo de vida de apps para Swift de iOS 14, veremos que ya no existen los ficheros <code>AppDelegate.swift</code> y <code>SceneDelegate.swift</code>. <strong>Estos han desaparecido y ahora solo tenemos un nuevo fichero que se llame igual que nuestro proyecto, pero acabado en App</strong>.</p>\n\n\n\n<p>En él, nos encontramos con el siguiente código:</p>\n\n\n\n<pre class=\"wp-block-preformatted\">import SwiftUI\n\n@main\nstruct demodemodemoApp: App {\n&nbsp; &nbsp; var body: some Scene {\n&nbsp; &nbsp; &nbsp; &nbsp; WindowGroup {\n&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ContentView()\n&nbsp; &nbsp; &nbsp; &nbsp; }\n&nbsp; &nbsp; }\n}</pre>\n\n\n\n<p><strong>El comando <code>@main</code> nos indica que ese es el punto de inicio de la app</strong>. En él, tenemos un <code>struct</code> que se conforma con el protocolo <code>App</code>, que también nos dice que esa es nuestra app: su punto de entrada. En ella hay una escena directamente sobre <code>body</code> (una <code>some Scene</code>) y dentro un grupo de ventanas que llaman al <code>struct</code> <code>ContentView</code>, que es donde tenemos la primera pantalla a mostrar.</p>\n\n\n\n<p>Pero no hay <code>AppDelegate</code> ni nada parecido. Ha desaparecido. Así que <strong>si queremos ejecutar algo que se lance antes que el arranque de la app (como la configuración de Firebase) tenemos un problema</strong>.</p>\n\n\n\n<p>Para subsanarlo nada más fácil que crear nosotros ese <code>AppDelegate</code> y asociarlo en nuestro <code>struct</code> conformado con <code>App</code>.</p>\n\n\n\n<pre class=\"wp-block-preformatted\">final class AppDelegate:NSObject, UIApplicationDelegate {\n&nbsp; &nbsp; func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -&gt; Bool {\n\n&nbsp; &nbsp; &nbsp; &nbsp; return true\n&nbsp; &nbsp; }\n}</pre>\n\n\n\n<p>Básicamente, lo que estamos haciendo es crear una clase de tipo <code>NSObject</code> (la clase de jerarquía más alta de Objective-C, y el padre de todas las clases de Cocoa Touch, por lo que <strong>es necesario que sea de ese tipo para poder decirle luego que se conforme a la interfaz <code>UIApplicationDelegate</code></strong>). Una vez hecho, ya podemos incluir nuestra función <code>didFinishLaunchingWithOptions</code> que tanto echábamos de menos. Una función que devuelva <code>true</code> y donde incluir el famoso<code> FirebaseApp.configure()</code>, siempre sin olvidar importar la librería en el fichero (obviamente). </p>\n\n\n\n<p><strong>Pero no acaba aquí el cambio: ahora hay que asociarlo a nuestra app</strong>. Para ello hemos de añadir un <em>property wrapper</em> nuevo dentro del <code>struct</code> de tipo <code>App</code>. Llamado <code>@UIApplicationDelegateAdaptor</code> al que pasarle el tipo de la clase <code>AppDelegate</code> que hemos creado.</p>\n\n\n\n<pre class=\"wp-block-preformatted\">@UIApplicationDelegateAdaptor(AppDelegate.self) var delegate</pre>\n\n\n\n<p>Listo. <strong>Hemos creado el adaptador que conecta el ciclo de vida nuevo con un <code>AppDelegate</code> que nos permitirá inicializar Firebase</strong>, donde también podremos poner (por ejemplo) el control de las notificaciones que tengamos en la app o las entradas a través de llamadas por enlaces profundos (por citar algunos ejemplos).</p>\n\n\n\n<p>Poco más, espero que le saques buen provecho a este tutorial y <strong>si tienes alguna sugerencia de algo que quieras que tratemos aquí, solo dínoslo en los comentarios</strong> o en nuestro twitter, @apple_coding. Un saludo y Good Apple Coding.</p>\n",
+            "protected": false
+        },
+        "excerpt":
+        {
+            "rendered": "<p>Lo confesamos: en Apple Coding somos enemigos acérrimos del famoso CocoaPods. No nos gusta nada. Hemos sufrido tanto con él y hemos encontrado muchas extrañezas con los años. Lo sentimos por aquellos que les guste: nosotros lo hemos usado por exigencias de clientes o APIs que solo aportaban esa forma de instalar casi desde su &hellip;</p>\n",
+            "protected": false
+        },
+        "author": 1,
+        "featured_media": 4938,
+        "comment_status": "open",
+        "ping_status": "closed",
+        "sticky": false,
+        "template": "",
+        "format": "standard",
+        "meta":
+        {
+            "spay_email": ""
+        },
+        "categories":
+        [
+            304,
+            2
+        ],
+        "tags":
+        [
+            452,
+            360,
+            505,
+            503,
+            504
+        ],
+        "jetpack_featured_media_url": "https://applecoding.com/wp-content/uploads/2020/09/1V9Yy60M67exG3kBt290XFw@2x.png",
+        "amp_enabled": true,
+        "_links":
+        {
+            "self":
+            [
+                {
+                    "href": "https://applecoding.com/wp-json/wp/v2/posts/4933"
+                }
+            ],
+            "collection":
+            [
+                {
+                    "href": "https://applecoding.com/wp-json/wp/v2/posts"
+                }
+            ],
+            "about":
+            [
+                {
+                    "href": "https://applecoding.com/wp-json/wp/v2/types/post"
+                }
+            ],
+            "author":
+            [
+                {
+                    "embeddable": true,
+                    "href": "https://applecoding.com/wp-json/wp/v2/users/1"
+                }
+            ],
+            "replies":
+            [
+                {
+                    "embeddable": true,
+                    "href": "https://applecoding.com/wp-json/wp/v2/comments?post=4933"
+                }
+            ],
+            "version-history":
+            [
+                {
+                    "count": 3,
+                    "href": "https://applecoding.com/wp-json/wp/v2/posts/4933/revisions"
+                }
+            ],
+            "predecessor-version":
+            [
+                {
+                    "id": 4939,
+                    "href": "https://applecoding.com/wp-json/wp/v2/posts/4933/revisions/4939"
+                }
+            ],
+            "wp:featuredmedia":
+            [
+                {
+                    "embeddable": true,
+                    "href": "https://applecoding.com/wp-json/wp/v2/media/4938"
+                }
+            ],
+            "wp:attachment":
+            [
+                {
+                    "href": "https://applecoding.com/wp-json/wp/v2/media?parent=4933"
+                }
+            ],
+            "wp:term":
+            [
+                {
+                    "taxonomy": "category",
+                    "embeddable": true,
+                    "href": "https://applecoding.com/wp-json/wp/v2/categories?post=4933"
+                },
+                {
+                    "taxonomy": "post_tag",
+                    "embeddable": true,
+                    "href": "https://applecoding.com/wp-json/wp/v2/tags?post=4933"
+                }
+            ],
+            "curies":
+            [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    },
+    {
+        "id": 4916,
+        "date": "2020-09-02T13:34:19",
+        "date_gmt": "2020-09-02T11:34:19",
+        "guid":
+        {
+            "rendered": "https://applecoding.com/?p=4916"
+        },
+        "modified": "2021-01-22T18:24:48",
+        "modified_gmt": "2021-01-22T17:24:48",
+        "slug": "grabacion-segura-claves-swift-libreria-cryptokit",
+        "status": "publish",
+        "type": "post",
+        "link": "https://applecoding.com/trucos/grabacion-segura-claves-swift-libreria-cryptokit",
+        "title":
+        {
+            "rendered": "Grabación segura de claves en Swift con la librería CryptoKit"
+        },
+        "content":
+        {
+            "rendered": "\n<p>No hay nada más inseguro y menos recomendado por los expertos en seguridad, que<strong> grabar cualquier tipo de contraseña o valor clave para nuestra app, tal cual como cadena</strong>. </p>\n\n\n\n<p>Menos aún en lugares como el famoso e infame <code>UserDefaults</code> que <strong>solo debe ser usado para valores inocuos de nuestra app</strong> (como la configuración de color del usuario) y que siempre ha de tener una comprobación de valor y un forzado a valor por defecto. Es decir, que si grabo <code>darkMode</code> como un valor 1 o 0, al leerlo compruebo si tiene uno de estos valores y si no, pongo el 0 por defecto. <strong>Para evitar cualquier tipo de modificación que cree estados inciertos en mi app</strong>.</p>\n\n\n\n<h2>Grabación de claves en forma segura</h2>\n\n\n\n<p>Desde iOS 13, Apple creó una librería nativa 100% en Swift llamada <code>CryptoKit</code>, que nos proporciona una forma muy simple de trabajar con <em>hashes</em>, cifrado y firma digital. Y esto es clave para no guardar valores «en bruto», como una cadena, que puede ser observada por cualquier persona que intente comprometer nuestra app simplemente mirando la memoria de la misma desde un dispositivo comprometido (por ejemplo).</p>\n\n\n\n<blockquote class=\"wp-block-quote is-style-large\"><p><strong>Jamás</strong> hemos de guardar ningún dato seguro o clave, tal cual. Mejor cifrado o como <strong>hash</strong>, para prevenir que pueda ser comprometido.</p></blockquote>\n\n\n\n<p>¿Qué grabo entonces en vez del valor <code>String</code> que ponga un usuario en mi app como contraseña o valor comprometido? El <em>hash</em>. <strong>Un <em>hash</em> es la firma de autenticación de un dato</strong>. Un dato concreto, sea cual sea su tamaño, solo puede dar un <em>hash</em> concreto, y si dicho dato cambia, el <em>hash</em> será distinto y sabremos que este ha sido alterado. Nada más simple.</p>\n\n\n\n<p><strong>¿Y por qué usar un <em>hash</em> es seguro en vez de la cadena?</strong> Porque el algoritmo de <em>hash</em> no permite, por cómo está creado, obtener en forma alguna el dato del que procede. Así que el hecho que alguien vea este dato en memoria no le da información alguna válida porque no puede extraer la información de la que procede.</p>\n\n\n\n<h2>Calculando el <em>hash</em></h2>\n\n\n\n<p>Para hacer esto solo necesitamos importar la librería <code>CryptoKit</code>. </p>\n\n\n\n<pre class=\"EnlighterJSRAW\" data-enlighter-language=\"generic\" data-enlighter-theme=\"\" data-enlighter-highlight=\"\" data-enlighter-linenumbers=\"\" data-enlighter-lineoffset=\"\" data-enlighter-title=\"\" data-enlighter-group=\"\">import CryptoKit</pre>\n\n\n\n<p>Una vez puesta, <strong>debemos transformar el dato de tipo cadena que queremos almacenar a un tipo <code>Data</code> del sistema</strong>. Para ello usaremos un método que ya tienen todos los tipos <code>String</code> (método falible u opcional) que devuelve el valor de dato en bruto o <em>array</em> de <em>bytes</em>, a partir de la cadena que tenemos.</p>\n\n\n\n<pre class=\"EnlighterJSRAW\" data-enlighter-language=\"generic\" data-enlighter-theme=\"\" data-enlighter-highlight=\"\" data-enlighter-linenumbers=\"\" data-enlighter-lineoffset=\"\" data-enlighter-title=\"\" data-enlighter-group=\"\">let data = clave.data(using: .utf8)</pre>\n\n\n\n<p><strong>Usaremos para ello la codificación UTF8, que es la que usa Swift para todo el lenguaje y sus datos de caracteres</strong>. Ahora, bastará con pasar dicha cadena convertida en tipo <code>Data</code> por el constructor del tipo <code>Hash512</code>, que nos ofrece un método estático llamado <code>.hash</code> al que pasarle este y nos devuelve el <em>hash</em>. Nada más simple.</p>\n\n\n\n<pre class=\"EnlighterJSRAW\" data-enlighter-language=\"generic\" data-enlighter-theme=\"\" data-enlighter-highlight=\"\" data-enlighter-linenumbers=\"\" data-enlighter-lineoffset=\"\" data-enlighter-title=\"\" data-enlighter-group=\"\">let hashed = SHA512.hash(data: data)</pre>\n\n\n\n<p><strong>¿Cómo extraemos el valor del <em>hash</em>?</strong> Nada más simple que acudir a la propiedad <code>.description</code> que tienen todos los tipos con representación textual en Swift, para que nos de una cadena con la que podamos trabajar.</p>\n\n\n\n<pre class=\"EnlighterJSRAW\" data-enlighter-language=\"generic\" data-enlighter-theme=\"\" data-enlighter-highlight=\"\" data-enlighter-linenumbers=\"\" data-enlighter-lineoffset=\"\" data-enlighter-title=\"\" data-enlighter-group=\"\">hashed.description</pre>\n\n\n\n<p>Como el <code>data</code> es opcional, nos dará un <em>warning</em>, así que <strong>vamos a hacer una función que lo haga todo tal cual, gestionando los opcionales</strong>.</p>\n\n\n\n<pre class=\"EnlighterJSRAW\" data-enlighter-language=\"generic\" data-enlighter-theme=\"\" data-enlighter-highlight=\"\" data-enlighter-linenumbers=\"\" data-enlighter-lineoffset=\"\" data-enlighter-title=\"\" data-enlighter-group=\"\">func hashCode(clave:String) -> String? {\n    guard let data = clave.data(using: .utf8) else {\n        return nil\n    }\n    let hashed = SHA512.hash(data: data)\n    return hashed.description\n}</pre>\n\n\n\n<p>Veremos que nos antecede la cadena <em>SHA512 digest</em>: justo antes del valor de cadena. Podemos usar esta cadena, así tal cual en Swift. Pero si, por algún motivo, tenemos que enviarlo fuera, <strong>deberemos transformarlo sacando solo su cadena hexadecimal en vez de esa cadena previa</strong>.</p>\n\n\n\n<p>Para ello devolvemos lo siguiente en nuestra función:</p>\n\n\n\n<pre class=\"EnlighterJSRAW\" data-enlighter-language=\"generic\" data-enlighter-theme=\"\" data-enlighter-highlight=\"\" data-enlighter-linenumbers=\"\" data-enlighter-lineoffset=\"\" data-enlighter-title=\"\" data-enlighter-group=\"\">return hashed.compactMap { String(format: \"%02x\", $0) }.joined()</pre>\n\n\n\n<p>Esta simple línea, <strong>recorre el valor en valor en hash devuelto, y convierte cada <em>byte</em> de valor en su hexadecimal como cadena</strong>. El primer <code>compactMap</code> transforma el array dentro de <code>hashed</code> <em>byte</em> a <em>byte</em>, para luego con la función <code>joined()</code>, devolver todo ese array como un solo valor del tipo transformado (o sea, un <code>String</code>). </p>\n\n\n\n<h2>Listo para grabar y comparar</h2>\n\n\n\n<p>Nada más. Ya podemos grabar el dato como cadena donde queramos. Luego, para comprobar que una clave introducida es válida, <strong>solo tendremos que llamar a nuestra función <code>hashCode</code> y comparar el valor que nos devuelve con el valor que hemos guardado</strong>.</p>\n\n\n\n<blockquote class=\"wp-block-quote is-style-large\"><p>En vez de comparar la clave que el usuario introduzca en nuestra app, tal cual, le hacemos el <strong>hash</strong> y lo comparamos con el anterior <strong>hash</strong> que previamente grabamos. Si son el mismo, la clave es correcta.</p></blockquote>\n\n\n\n<p>De esta forma, nunca propagaremos el dato en sí. Si os gustado el tutorial, dejadnos un comentario y compartidlo en redes sociales, para llegar a más gente. Y si queréis que os hablemos de algún tema más, no dudéis en propornerlo. Un saludo y <strong>Good Apple Coding</strong>.</p>\n",
+            "protected": false
+        },
+        "excerpt":
+        {
+            "rendered": "<p>No hay nada más inseguro y menos recomendado por los expertos en seguridad, que grabar cualquier tipo de contraseña o valor clave para nuestra app, tal cual como cadena. Menos aún en lugares como el famoso e infame UserDefaults que solo debe ser usado para valores inocuos de nuestra app (como la configuración de color &hellip;</p>\n",
+            "protected": false
+        },
+        "author": 1,
+        "featured_media": 4917,
+        "comment_status": "open",
+        "ping_status": "closed",
+        "sticky": false,
+        "template": "",
+        "format": "standard",
+        "meta":
+        {
+            "spay_email": ""
+        },
+        "categories":
+        [
+            4
+        ],
+        "tags":
+        [
+            500,
+            329
+        ],
+        "jetpack_featured_media_url": "https://applecoding.com/wp-content/uploads/2020/09/cryptographic_hash_function.png",
+        "amp_enabled": true,
+        "_links":
+        {
+            "self":
+            [
+                {
+                    "href": "https://applecoding.com/wp-json/wp/v2/posts/4916"
+                }
+            ],
+            "collection":
+            [
+                {
+                    "href": "https://applecoding.com/wp-json/wp/v2/posts"
+                }
+            ],
+            "about":
+            [
+                {
+                    "href": "https://applecoding.com/wp-json/wp/v2/types/post"
+                }
+            ],
+            "author":
+            [
+                {
+                    "embeddable": true,
+                    "href": "https://applecoding.com/wp-json/wp/v2/users/1"
+                }
+            ],
+            "replies":
+            [
+                {
+                    "embeddable": true,
+                    "href": "https://applecoding.com/wp-json/wp/v2/comments?post=4916"
+                }
+            ],
+            "version-history":
+            [
+                {
+                    "count": 11,
+                    "href": "https://applecoding.com/wp-json/wp/v2/posts/4916/revisions"
+                }
+            ],
+            "predecessor-version":
+            [
+                {
+                    "id": 4953,
+                    "href": "https://applecoding.com/wp-json/wp/v2/posts/4916/revisions/4953"
+                }
+            ],
+            "wp:featuredmedia":
+            [
+                {
+                    "embeddable": true,
+                    "href": "https://applecoding.com/wp-json/wp/v2/media/4917"
+                }
+            ],
+            "wp:attachment":
+            [
+                {
+                    "href": "https://applecoding.com/wp-json/wp/v2/media?parent=4916"
+                }
+            ],
+            "wp:term":
+            [
+                {
+                    "taxonomy": "category",
+                    "embeddable": true,
+                    "href": "https://applecoding.com/wp-json/wp/v2/categories?post=4916"
+                },
+                {
+                    "taxonomy": "post_tag",
+                    "embeddable": true,
+                    "href": "https://applecoding.com/wp-json/wp/v2/tags?post=4916"
+                }
+            ],
+            "curies":
+            [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    },
+    {
+        "id": 4822,
+        "date": "2020-03-26T11:53:04",
+        "date_gmt": "2020-03-26T10:53:04",
+        "guid":
+        {
+            "rendered": "https://applecoding.com/?p=4822"
+        },
+        "modified": "2020-03-26T15:12:29",
+        "modified_gmt": "2020-03-26T14:12:29",
+        "slug": "tutorial-sign-in-with-apple",
+        "status": "publish",
+        "type": "post",
+        "link": "https://applecoding.com/tutoriales/tutorial-sign-in-with-apple",
+        "title":
+        {
+            "rendered": "Tutorial: Sign In with Apple"
+        },
+        "content":
+        {
+            "rendered": "\n<p>En la pasada WWDC, Apple sorprendió a propios y extraños presentado un sistema de registro de usuarios utilizando el Apple ID. La diferencia con otros método de registro es que éste ponía el <strong>foco en la privacidad y en la seguridad de lo usuarios</strong>. </p>\n\n\n\n<p>Hace unos días, tal y como os <a href=\"https://applecoding.com/noticias/cambio-normas-app-store-abril-2020\">comentamos</a>, anunciaron que <strong>a partir del 30 de Abril será de obligada implementación </strong>en aplicaciones que utilicen algún <em>login</em> mediante redes sociales. Si es tu caso y aún no lo has implementado, no te preocupes, a continuación te mostramos las claves para hacerlo de forma sencilla.</p>\n\n\n\n<h2>Los cimientos del registro de Apple</h2>\n\n\n\n<p>Tal y como os hemos adelantado, todas las aplicaciones que dispongan de un sistema de registro mediante redes sociales, deberán implementar el <em>Sign in with Apple</em> y además este debe estar situado como la <strong>primera opción</strong> por encima de ellas.</p>\n\n\n\n<div class=\"wp-block-image\"><figure class=\"aligncenter size-large\"><img loading=\"lazy\" width=\"1024\" height=\"538\" src=\"https://applecoding.com/wp-content/uploads/2020/03/ios13-iphone-xs-ipad-pro-sign-in-with-apple-social-card-1024x538.jpg\" alt=\"\" class=\"wp-image-4842\" srcset=\"https://applecoding.com/wp-content/uploads/2020/03/ios13-iphone-xs-ipad-pro-sign-in-with-apple-social-card-1024x538.jpg 1024w, https://applecoding.com/wp-content/uploads/2020/03/ios13-iphone-xs-ipad-pro-sign-in-with-apple-social-card-300x158.jpg 300w, https://applecoding.com/wp-content/uploads/2020/03/ios13-iphone-xs-ipad-pro-sign-in-with-apple-social-card-768x403.jpg 768w, https://applecoding.com/wp-content/uploads/2020/03/ios13-iphone-xs-ipad-pro-sign-in-with-apple-social-card.jpg 1200w\" sizes=\"(max-width: 1024px) 100vw, 1024px\" /></figure></div>\n\n\n\n<p>Los principios del funcionamiento se basan en utilizar los métodos de <strong>autenticación biométrica (como el FaceID y el Touch ID)</strong> del que disponen los terminales de la manzana, para realizar el registro de usuarios de forma cómoda pero también segura para ellos.</p>\n\n\n\n<p>También es posible utilizar autenticación<strong> mediante envío de códigos para aplicaciones web u otras plataformas</strong>, pero se sale de la implementación dentro de los sistemas de Apple y del tema que vamos a tratar hoy.</p>\n\n\n\n<p>No nos olvidemos que los datos del usuario que nos ofrece este sistema se obtienen de su Apple ID y por el momento son bastante limitados. Además la interfaz del sistema mostrarán al usuario cada uno de ellos para que verifique la información y sepa en todo momento lo que está compartiendo  con nosotros. Sin duda <strong>estas medidas hacen este sistema muy confiable</strong> y seguro que usuarios agradecen su implementación.</p>\n\n\n\n<h2>Configuración previa</h2>\n\n\n\n<p>En este tutorial usaremos la autenticación de Apple sobre una aplicación para iOS. Lo primero que necesitamos es añadir el <em>framework</em> al proyecto mediante un nueva <em>Capability</em> del mismo. Entramos en la configuración del <strong>target</strong>, pestaña <strong>Signing &amp; Capabilities</strong>, pulsamos <strong>&#8216;+ Capability&#8217; </strong>y añadimos <strong>Sing In with Apple</strong>.</p>\n\n\n\n<figure class=\"wp-block-image size-large is-resized\"><img loading=\"lazy\" src=\"https://applecoding.com/wp-content/uploads/2020/03/Captura-de-pantalla-2020-03-19-a-las-22.18.34-1024x698.png\" alt=\"\" class=\"wp-image-4835\" width=\"768\" height=\"524\" srcset=\"https://applecoding.com/wp-content/uploads/2020/03/Captura-de-pantalla-2020-03-19-a-las-22.18.34-1024x698.png 1024w, https://applecoding.com/wp-content/uploads/2020/03/Captura-de-pantalla-2020-03-19-a-las-22.18.34-300x205.png 300w, https://applecoding.com/wp-content/uploads/2020/03/Captura-de-pantalla-2020-03-19-a-las-22.18.34-768x524.png 768w, https://applecoding.com/wp-content/uploads/2020/03/Captura-de-pantalla-2020-03-19-a-las-22.18.34-1536x1048.png 1536w, https://applecoding.com/wp-content/uploads/2020/03/Captura-de-pantalla-2020-03-19-a-las-22.18.34-2048x1397.png 2048w, https://applecoding.com/wp-content/uploads/2020/03/Captura-de-pantalla-2020-03-19-a-las-22.18.34-220x150.png 220w\" sizes=\"(max-width: 768px) 100vw, 768px\" /></figure>\n\n\n\n<p>Si todo ha ido bien, Xcode los incluirá los permisos necesarios en los certificados de nuestra aplicación y podremos empezar a usarlo. Ahora sí, importamos la librería en los ficheros que en lo que vayamos a realizar la implementación.</p>\n\n\n\n<pre class=\"wp-block-preformatted\"><strong>import</strong> AuthenticationServices</pre>\n\n\n\n<h2>Creamos la petición</h2>\n\n\n\n<p>Como paso inicial en el código, <strong>añadiremos el botón a la interfaz</strong>. Imaginemos que tenemos varios métodos de registro con sus correspondientes botones dentro de una pila implementada con un <code>UIStackView</code>.</p>\n\n\n\n<pre class=\"wp-block-preformatted\">&nbsp; &nbsp;&nbsp;<strong>let</strong> button = ASAuthorizationAppleIDButton()\n&nbsp; &nbsp;&nbsp;button.addTarget(<strong>self</strong>, action: #selector(registerWithApple), <strong>for</strong>: .touchUpInside)\n&nbsp; &nbsp;&nbsp;<strong>self</strong>.stackRegistro.addArrangedSubview(button)</pre>\n\n\n\n<p>Un vez creado el botón, indicamos que debe ejecutar la función <code>registerWithApple</code> cuando detecte una pulsación y por último añadimos el botón a la pila. El siguiente paso es implementar la función destino.</p>\n\n\n\n<pre class=\"wp-block-preformatted\"><strong>@objc</strong>\n<strong>func</strong> registerWithApple() {\n&nbsp; &nbsp;&nbsp;<strong>let</strong> appleIDRequest = ASAuthorizationAppleIDProvider().createRequest()\n&nbsp; &nbsp;&nbsp;request.requestedScopes = [.fullName, .email]\n    <strong>let</strong> passwordResquest = ASAuthorizationPasswordProvider().createRequest()\n\n    <strong>let</strong> requests = [appleIDRequest, passwordResquest]\n&nbsp;&nbsp; &nbsp;\n&nbsp; &nbsp;&nbsp;<strong>let</strong> authController = ASAuthorizationController(authorizationRequests: requests)\n&nbsp; &nbsp;&nbsp;authController.delegate = <strong>self</strong>\n&nbsp; &nbsp;&nbsp;authController.presentationContextProvider = <strong>self</strong>\n    authController.performRequest()\n}</pre>\n\n\n\n<p>Debemos crear la petición y asignar el delegado donde recibiremos el resultado. Para ello primero creamos una petición <code>appleIDRequest</code> y mediante la propiedad <code>requestedScopes</code> indicamos los datos de usuario a los que queremos acceder. Después otra con <code>passwordResquest</code> que <strong>nos permitirá leer datos de <em>login</em> que pudiese haber guardado en el llavero de iCloud</strong> porque el usuario se haya registrado desde otro terminal o la web.</p>\n\n\n\n<p>Agrupamos las peticiones, inicializamos el controlador para ellas y le asignamos los delegados. Uno para la respuesta y otro para la presentación de la interfaz. En la línea final ejecutamos las solicitudes.</p>\n\n\n\n<h2>Recibimos los datos</h2>\n\n\n\n<p>Veamos ahora el delegado para mostrar la interfaz. El <em>framework</em> presenta una vista modal dentro de un tipo <code>UIWindow</code> que le indicaremos mediante una función como la siguiente:</p>\n\n\n\n<pre class=\"wp-block-preformatted\"><strong>func</strong> presentationAnchor(<strong>for</strong> controller: ASAuthorizationController) -> ASPresentationAnchor {\n    <strong>return</strong> <strong>self</strong>.view.window!\n}</pre>\n\n\n\n<div class=\"wp-block-image\"><figure class=\"aligncenter size-large\"><img loading=\"lazy\" width=\"576\" height=\"1024\" src=\"https://applecoding.com/wp-content/uploads/2020/03/IMG_BA2F1F8C4D4C-1-576x1024.jpeg\" alt=\"Demo de funcionalidad\" class=\"wp-image-4836\" srcset=\"https://applecoding.com/wp-content/uploads/2020/03/IMG_BA2F1F8C4D4C-1-576x1024.jpeg 576w, https://applecoding.com/wp-content/uploads/2020/03/IMG_BA2F1F8C4D4C-1-169x300.jpeg 169w, https://applecoding.com/wp-content/uploads/2020/03/IMG_BA2F1F8C4D4C-1.jpeg 750w\" sizes=\"(max-width: 576px) 100vw, 576px\" /></figure></div>\n\n\n\n<p>Esto hace que al usuario se le presente la opción para el <em>login</em>, y si es <strong>la primera vez le aparecerá una pantalla informativa</strong>, donde podrá verificar y/o modificar los datos que está solicitando la aplicación. En las siguientes ocasiones simplemente se pedirá la verificación biométrica.</p>\n\n\n\n<p>Si la identidad del usuario es correcta, <strong>recibiremos la llamada al delegado</strong> con la respuesta. De todo esto se encarga el propio sistema por lo que el desarrollador no tiene responsabilidad a la hora de realizar las verificaciones.</p>\n\n\n\n<pre class=\"wp-block-preformatted\"><strong>func</strong> authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {\n&nbsp; &nbsp; &nbsp; &nbsp; <strong>switch</strong> authorization.credential {\n&nbsp; &nbsp; &nbsp; &nbsp; <strong>case</strong> <strong>let</strong> credentials <strong>as</strong> ASAuthorizationAppleIDCredential:\n&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <strong>let</strong> userIdentifier = credentials.user\n&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <strong>let</strong> fullName = credentials.fullName\n&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <strong>let</strong> email = credentials.email\n\n&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <strong>self</strong>.saveUserInKeychain(userIdentifier)\n&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <strong>self</strong>.register(userIdentifier: userIdentifier, fullName: fullName, email: email)\n&nbsp; &nbsp; &nbsp; &nbsp; <strong>case</strong> <strong>let</strong> password <strong>as</strong> ASPasswordCredential:\n&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <strong>let</strong> username = password.user\n&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <strong>let</strong> password = password.password\n&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;\n&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; DispatchQueue.main.async {\n&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <strong>self</strong>.login(username: username, password: password)\n&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }\n&nbsp; &nbsp; &nbsp; &nbsp; <strong>default</strong>: <strong>break</strong>\n&nbsp; &nbsp; &nbsp; &nbsp; }\n&nbsp; &nbsp; }</pre>\n\n\n\n<p>El parámetro fundamental de esta delegación es <code>authorization</code>, cuya propiedad <code>credential</code> contiene enumeración con el<strong> tipo de acceso encontrado</strong>. Tenemos dos opciones: la primera es que sean unas credenciales proporcionadas por <em>Sign In with Apple</em> y la segunda es que se hayan encontrado <strong>credenciales almacenadas en el llavero de iCloud</strong>. Como se observa en el código, para la segunda opción usamos directamente las credenciales para iniciar sesión y no tiene mucho más misterio.</p>\n\n\n\n<p>Pero para el primer caso, el tipo retornado <code>ASAuthorizationAppleIDCredential</code> nos devuelve los datos de usuario para realizar el registro. Además, debemos almacenar la propiedad <code>user</code> de cara al futuro para poder loguear al usuario de forma segura en posteriores ocasiones. <strong>Es importante saber que no es posible guardar el valor en los <code>UserDefaults</code></strong> al tratarse de información privada. Habrá que recurrir al almacén de claves seguras. </p>\n\n\n\n<p>Después podemos enviar los datos solicitados a nuestra plataforma para realizar el registro del usuario. Lo último, pero no menos importante, es que <strong>sólo se nos devolverá la información del usuario (correo, nombre&#8230;) en la primera llamada</strong>, si usamos el mismo código en posteriores ocasiones, tendremos el valor de la propiedad <code>user</code> pero no los datos del usuario.</p>\n\n\n\n<h2>Estado de la autenticación </h2>\n\n\n\n<p>Ya tenemos nuestro registro preparado, pero <strong>necesitamos conocer si el usuario está autenticado cuando intente volver a acceder</strong> a la aplicación. Para ello tenemos el método <code>getCredentialState</code>. Debemos indicarle como argumento el identificador que nos hemos guardado anteriormente que nos venía en la propiedad <code>user</code>.</p>\n\n\n\n<pre class=\"wp-block-preformatted\"><strong>let</strong> appleIDProvider = ASAuthorizationAppleIDProvider()\n&nbsp; &nbsp; &nbsp; &nbsp; appleIDProvider.getCredentialState(forUserID: KeychainItem.userIdentifier) { state, error <strong>in</strong>\n&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <strong>switch</strong> state {\n&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <strong>case</strong> .authorized:\n&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <strong>break</strong>\n&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <strong>case</strong> .revoked, .notFound:\n&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; DispatchQueue.main.async {\n&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <strong>self</strong>.window?.rootViewController?.goToLogin()\n&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }\n&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <strong>default</strong>: <strong>break</strong>\n&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }\n&nbsp; &nbsp; &nbsp; &nbsp; }</pre>\n\n\n\n<p>La respuesta nos devuelve un <code>error</code> si hay salido algo mal y un <code>state</code> donde una enumeración nos indica el estado actual de las credenciales. Tenemos los siguientes valores:</p>\n\n\n\n<ul><li><strong>authorized</strong> La autenticación es correcta y podemos dar acceso usuario.</li><li><strong>revoked</strong> El usuario ha eliminado el permiso para usar esta autenticación. Podemos hacer también durante el desarrollo entrando en <strong>Ajustes </strong>&gt;<strong> iCloud </strong>&gt;<strong> Contraseña y seguridad </strong>&gt;<strong> Apps que utilizan tu ID de Apple</strong>.</li><li><strong>notFound</strong> No se ha encontrado ninguna autenticación para ese identificador de usuario.</li></ul>\n\n\n\n<p>Manejaremos cada uno de los estados para dejar acceder o denegar el acceso a nuestra aplicación según corresponda.</p>\n\n\n\n<h2>Ya lo hemos logrado</h2>\n\n\n\n<p>Después de este tutorial podemos decir que <strong>el registro mediante Apple ID no es tan fiero como lo pintan</strong>. Su implementación es sencilla y proporciona un nivel de seguridad y privacidad para los usuarios que seguramente elimine la fricción existente en las aplicaciones a la hora de registrarse y compartir datos.</p>\n\n\n\n<p>A este respecto, y al contrario que en otras ocasiones, Apple proporciona una <a href=\"https://developer.apple.com/documentation/authenticationservices/implementing_user_authentication_with_sign_in_with_apple\">documentación</a> bastante extensa e incluso un <a href=\"https://docs-assets.developer.apple.com/published/d42a7d7e3c/ImplementingUserAuthenticationWithSignInWithApple.zip\">proyecto de demostración</a>. Podéis echarle un vistazo si necesitáis ampliar la información.</p>\n\n\n\n<p>Esperamos que este tutorial haya sido de utilidad y que si tu aplicación se encuentra entre las que necesitan este registro de forma obligatoria, aún estés a tiempo de implementarlo. <strong>Un saludo y Good Apple Coding.</strong></p>\n",
+            "protected": false
+        },
+        "excerpt":
+        {
+            "rendered": "<p>En la pasado WWDC Apple lanzó su sistema de registro mediante el Apple ID. Ahora podemos autenticar a los usuarios de nuestras apps de forma segura y respetando su privacidad.</p>\n",
+            "protected": false
+        },
+        "author": 6,
+        "featured_media": 4841,
+        "comment_status": "open",
+        "ping_status": "closed",
+        "sticky": false,
+        "template": "",
+        "format": "standard",
+        "meta":
+        {
+            "spay_email": ""
+        },
+        "categories":
+        [
+            2
+        ],
+        "tags":
+        [
+            497
+        ],
+        "jetpack_featured_media_url": "https://applecoding.com/wp-content/uploads/2020/03/iu.jpg",
+        "amp_enabled": true,
+        "_links":
+        {
+            "self":
+            [
+                {
+                    "href": "https://applecoding.com/wp-json/wp/v2/posts/4822"
+                }
+            ],
+            "collection":
+            [
+                {
+                    "href": "https://applecoding.com/wp-json/wp/v2/posts"
+                }
+            ],
+            "about":
+            [
+                {
+                    "href": "https://applecoding.com/wp-json/wp/v2/types/post"
+                }
+            ],
+            "author":
+            [
+                {
+                    "embeddable": true,
+                    "href": "https://applecoding.com/wp-json/wp/v2/users/6"
+                }
+            ],
+            "replies":
+            [
+                {
+                    "embeddable": true,
+                    "href": "https://applecoding.com/wp-json/wp/v2/comments?post=4822"
+                }
+            ],
+            "version-history":
+            [
+                {
+                    "count": 26,
+                    "href": "https://applecoding.com/wp-json/wp/v2/posts/4822/revisions"
+                }
+            ],
+            "predecessor-version":
+            [
+                {
+                    "id": 4854,
+                    "href": "https://applecoding.com/wp-json/wp/v2/posts/4822/revisions/4854"
+                }
+            ],
+            "wp:featuredmedia":
+            [
+                {
+                    "embeddable": true,
+                    "href": "https://applecoding.com/wp-json/wp/v2/media/4841"
+                }
+            ],
+            "wp:attachment":
+            [
+                {
+                    "href": "https://applecoding.com/wp-json/wp/v2/media?parent=4822"
+                }
+            ],
+            "wp:term":
+            [
+                {
+                    "taxonomy": "category",
+                    "embeddable": true,
+                    "href": "https://applecoding.com/wp-json/wp/v2/categories?post=4822"
+                },
+                {
+                    "taxonomy": "post_tag",
+                    "embeddable": true,
+                    "href": "https://applecoding.com/wp-json/wp/v2/tags?post=4822"
+                }
+            ],
+            "curies":
+            [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    },
+    {
+        "id": 4803,
+        "date": "2020-03-13T14:11:12",
+        "date_gmt": "2020-03-13T13:11:12",
+        "guid":
+        {
+            "rendered": "https://applecoding.com/?p=4803"
+        },
+        "modified": "2021-01-28T17:22:08",
+        "modified_gmt": "2021-01-28T16:22:08",
+        "slug": "compras-in-app-tutorial-storekit",
+        "status": "publish",
+        "type": "post",
+        "link": "https://applecoding.com/tutoriales/compras-in-app-tutorial-storekit",
+        "title":
+        {
+            "rendered": "Tutorial, compras in-app con StoreKit (IAP)"
+        },
+        "content":
+        {
+            "rendered": "\n<p>Las compras dentro de la aplicación o In-App Purchases (IAP) <strong>son una forma más de monetizar una aplicación o servicio dentro del App Store.</strong> </p>\n\n\n\n<p>Los usuarios suelen ser reticentes a la hora de pagar por una aplicación sin poder probarla antes, así que <strong>ofrecer características básicas de forma gratuita y añadir otras más avanzadas mediante un pago,</strong> puede ser una solución eficaz a la hora de monetizar nuestro trabajo. </p>\n\n\n\n<p>Otra variante podrían ser las aplicaciones que proporcionan un servicio. Para este caso, Apple también ofrece una forma sencilla de <strong>gestionar las suscripciones</strong> tanto para desarrolladores como para los propios usuarios.</p>\n\n\n\n<h2>Tipos de compras In-App</h2>\n\n\n\n<p>Antes una advertencia: si quieres implementar las compras por tu cuenta, primero revisa si está permitido. Sólo hay unos pocos casos en los que Apple permite implementar una pasarela de pago fuera del App Store. Y por supuesto, conviene recordar que a cambio de proporcionar la plataforma <strong>Apple se queda una comisión por cada compra o por cada pago de las suscripciones</strong>. Pero utilizar las herramientas del SDK oficial simplifica el desarrollo y genera confianza a los compradores.</p>\n\n\n\n<blockquote class=\"wp-block-quote is-style-large\"><p>Apple se queda un 30% de las compras integradas, que en las suscripciones baja a un 15% cuando cualquier usuario lleve más de un año pagando nuestros servicio.</p></blockquote>\n\n\n\n<p>Los tipos de compras dentro de la aplicación que proporciona Apple son:</p>\n\n\n\n<ul><li><strong>Consumibles</strong> que pueden utilizarse una vez y luego desaparecen. Podrán comprarse de nuevo si el usuario lo desea. <strong>Como las monedas en un juego</strong>.</li><li><strong>No consumibles</strong> que se compran una vez y ya no caducan. Como acceder a funciones <em>premium</em> o nuevos niveles en un juego. <strong>Una vez compradas ya son para el usuario para siempre</strong>.</li><li><strong>Suscripciones auto-renovables</strong> que tras el periodo que comprenda la suscripción se renuevan de forma automática a menos que el usuario cancele la compra. <strong>Existen opciones avanzadas que incluyen periodos de prueba</strong>.</li><li><strong>Suscripciones no auto-renovables</strong> que no son renovadas de forma automática si no que el usuario puede volver a comprarlas de nuevo cuando caducan.</li></ul>\n\n\n\n<p>Todos los tipos están implementadas en <code>StoreKit</code>, el <em>framework</em> de Apple que debes añadir a tu proyecto si quieres ofrecer compras integradas en tu aplicación.</p>\n\n\n\n<pre class=\"EnlighterJSRAW\" data-enlighter-language=\"generic\" data-enlighter-theme=\"\" data-enlighter-highlight=\"\" data-enlighter-linenumbers=\"\" data-enlighter-lineoffset=\"\" data-enlighter-title=\"\" data-enlighter-group=\"\">import StoreKit</pre>\n\n\n\n<p>Es muy importante entender algo: <strong>Apple no permite que ofrezcamos nuestras suscripciones o compras integradas fuera del App Store si el producto es digital</strong>. Si ofrecemos monedas en un juego, se deben ofrecer obligatoriamente desde el App Store. Si tenemos funciones que el usuario puede comprar en nuestra app (funciones <em>premium</em>) también tiene que hacerse por el App Store. </p>\n\n\n\n<p>No obstante, si ofrecemos un servicio que sea de producto digital que se consuma directamente en la app, podemos ofrecer nuestro propio sistema de pago externo pero <strong>no podremos ofrecer al usuario darse de alta en nuestro sistema ni dirigirlo en forma alguna a nuestra propia pasarela</strong>. Es importante que os leáis bien <a href=\"https://developer.apple.com/app-store/subscriptions/\" target=\"_blank\" rel=\"noreferrer noopener\">las normas de Apple</a> al respecto si no queréis encontraros con la app rechazada.</p>\n\n\n\n<h2>Comprendiendo el ciclo de StoreKit</h2>\n\n\n\n<p>Una de las partes más complicadas de implementar las compras dentro de la aplicación es entender <strong>cómo funciona el ciclo de compra</strong>. Enseguida veremos cómo utilizar el <em>framework</em> para controlar de forma adecuada el uso de éstas dentro de nuestras aplicaciones. </p>\n\n\n\n<p>En algunos casos basta con <strong>realizar la compra y proporcionar acceso a la funcionalidad</strong>, pero en otros casos como las suscripciones renovables debemos confiar en algún servicio de <em>backend</em> externo o propio para validar el estado.</p>\n\n\n\n<p>V<strong>eamos cómo funciona a nivel de código</strong>. Los elementos más interesantes de <code>StoreKit</code> y qué nos permitirán implementar nuestras compras In-App son los siguientes:</p>\n\n\n\n<ul><li><code><code data-enlighter-language=\"generic\" class=\"EnlighterJSRAW\">SKProduct</code></code> representa cada uno de los productos que hemos dado de alta en nuestra aplicación.</li><li><code><code data-enlighter-language=\"generic\" class=\"EnlighterJSRAW\">SKPayment</code></code> contiene la información de cada uno de los pagos que se realizan. Siempre va asociado a uno de los <code><code data-enlighter-language=\"generic\" class=\"EnlighterJSRAW\">SKProduct</code></code> que tenga nuestra aplicación disponibles.</li><li><code><code data-enlighter-language=\"generic\" class=\"EnlighterJSRAW\">SKPaymentQueue</code></code> es el objeto que implementa la cola de los pagos que se han realizado en la aplicación. Es fundamental para el flujo de las compras.</li><li><code><code data-enlighter-language=\"generic\" class=\"EnlighterJSRAW\">SKProductsRequest</code></code> y <code><code data-enlighter-language=\"generic\" class=\"EnlighterJSRAW\">SKProductsResponse</code></code> son respectivamente la petición y la respuesta cuando queremos conocer las compras de las que dispone nuestra aplicación.</li></ul>\n\n\n\n<p>Un vez que ya conocemos a los actores, <strong>vayamos a ver la película</strong>.</p>\n\n\n\n<h2>Implementación paso a paso</h2>\n\n\n\n<p>Lo primero es dar de alta el producto o suscripción en el <a href=\"https://appstoreconnect.apple.com\">App Store Connect</a>. Entramos en la web, seleccionamos la aplicación y dentro del menú <strong>Prestaciones</strong> tenemos la opción de <strong>Compras dentro de la app</strong>. </p>\n\n\n\n<p>En ella vemos el listado de compras disponibles y <strong>con el botón de «+» podemos añadir una nueva</strong>. Seleccionamos el tipo de compra que necesitamos y rellenamos la información necesaria para crearla.</p>\n\n\n\n<figure class=\"wp-block-image size-large\"><img loading=\"lazy\" width=\"1024\" height=\"591\" src=\"https://applecoding.com/wp-content/uploads/2020/03/Captura-de-pantalla-2020-03-11-a-las-16.41.49-1024x591.png\" alt=\"\" class=\"wp-image-4806\" srcset=\"https://applecoding.com/wp-content/uploads/2020/03/Captura-de-pantalla-2020-03-11-a-las-16.41.49-1024x591.png 1024w, https://applecoding.com/wp-content/uploads/2020/03/Captura-de-pantalla-2020-03-11-a-las-16.41.49-300x173.png 300w, https://applecoding.com/wp-content/uploads/2020/03/Captura-de-pantalla-2020-03-11-a-las-16.41.49-768x444.png 768w, https://applecoding.com/wp-content/uploads/2020/03/Captura-de-pantalla-2020-03-11-a-las-16.41.49-1536x887.png 1536w, https://applecoding.com/wp-content/uploads/2020/03/Captura-de-pantalla-2020-03-11-a-las-16.41.49.png 1804w\" sizes=\"(max-width: 1024px) 100vw, 1024px\" /></figure>\n\n\n\n<p>Volvemos al código de la aplicación y lo más sencillo es crear una clase <code>IAPManager</code>, que utilice el patrón <strong><a href=\"https://es.wikipedia.org/wiki/Singleton\">singleton</a></strong>, <strong>que nos permita gestionar las suscripciones de forma sencilla</strong> desde cualquier parte de nuestro código.</p>\n\n\n\n<pre class=\"EnlighterJSRAW\" data-enlighter-language=\"generic\" data-enlighter-theme=\"\" data-enlighter-highlight=\"\" data-enlighter-linenumbers=\"\" data-enlighter-lineoffset=\"\" data-enlighter-title=\"\" data-enlighter-group=\"\">class IAPManager: NSObject {\n    static let shared = IAPManager()\n}</pre>\n\n\n\n<p>Lo primero que debemos implementar son las delegaciones <code>SKRequestDelegate</code> y <code>SKProductsRequestDelegate</code> que recogen la respuesta a la petición de las compras disponibles. <strong>Extendemos nuestra clase y la conformamos con dichos protocolos</strong>. </p>\n\n\n\n<pre class=\"EnlighterJSRAW\" data-enlighter-language=\"generic\" data-enlighter-theme=\"\" data-enlighter-highlight=\"\" data-enlighter-linenumbers=\"\" data-enlighter-lineoffset=\"\" data-enlighter-title=\"\" data-enlighter-group=\"\">extension IAPManager: SKProductsRequestDelegate, SKRequestDelegate {\n    // Recibe los productos\n    func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {}\n    \n    // Es llamado cuando ocurre algún error\n    func request(_ request: SKRequest, didFailWithError error: Error) {}\n    \n    // Se ejecuta cuando finaliza la petición\n    func requestDidFinish(_ request: SKRequest) {}\n}</pre>\n\n\n\n<p>A la implementación de la clase <strong>le añadimos un método para realizar la consulta</strong>:</p>\n\n\n\n<pre class=\"EnlighterJSRAW\" data-enlighter-language=\"generic\" data-enlighter-theme=\"\" data-enlighter-highlight=\"\" data-enlighter-linenumbers=\"\" data-enlighter-lineoffset=\"\" data-enlighter-title=\"\" data-enlighter-group=\"\">func getProducts(productIdentifiers: Set&lt;String> = []) {\n    let request = SKProductsRequest(productIdentifiers: productIdentifiers)\n    request.delegate = self\n    request.start()\n}</pre>\n\n\n\n<p>El método <strong>puede recibir como parámetro el identificador o identificadores de las compras o podría dejarse en blanco para solicitar información sobre todos los productos</strong>. </p>\n\n\n\n<p>Crearemos en función del parámetro la solicitud, después asignaremos la propia clase como delegado y con <code><code data-enlighter-language=\"generic\" class=\"EnlighterJSRAW\">start()</code></code> comenzaremos la petición. <strong>El resultado llegará a uno de los tres métodos de la delegación</strong>, que en el caso de ir todo bien, el método de retorno será <code><code data-enlighter-language=\"generic\" class=\"EnlighterJSRAW\">productRequest</code></code> y podremos leer el array de productos en la propiedad <code>products</code> del <code><code data-enlighter-language=\"generic\" class=\"EnlighterJSRAW\">SKProductsResponse</code></code>.</p>\n\n\n\n<p>De esta forma seremos capaces de, por ejemplo, <strong>listar los productos para que el usuario escoja el que quiere comprar</strong> con una simple llamada al método <code><code data-enlighter-language=\"generic\" class=\"EnlighterJSRAW\">IAPManager.shared.getProducts()</code></code>. Después guardaríamos los productos en una propiedad de <code><code data-enlighter-language=\"generic\" class=\"EnlighterJSRAW\">IAPManager</code></code> y los leeremos desde la vista que muestra una lista de los productos.</p>\n\n\n\n<p>Una vez conocidos los productos disponibles, <strong>el siguiente paso es realizar la compra</strong>. Para ello crearemos otro método dentro del gestor de compras de la siguiente forma:</p>\n\n\n\n<pre class=\"EnlighterJSRAW\" data-enlighter-language=\"generic\" data-enlighter-theme=\"\" data-enlighter-highlight=\"\" data-enlighter-linenumbers=\"\" data-enlighter-lineoffset=\"\" data-enlighter-title=\"\" data-enlighter-group=\"\">func buy(product: SKProduct, withUsername username: String = \"\") {\n    //let payment = SKPayment(product: product)\n    let payment = SKMutablePayment(product: product)\n    payment.applicationUsername = username\n    \n    SKPaymentQueue.default().add(self)\n    SKPaymentQueue.default().add(payment)\n}</pre>\n\n\n\n<p><strong>Tras crear el pago para un producto producto, lo añadimos a la cola del sistema</strong>. Hemos incluido una opción que puede resultar muy útil (aunque puedes ver comentada en el <em>snippet</em> la opción estándar) para usar un identificador interno de nombre de usuario. </p>\n\n\n\n<p>Con esto evitamos la repetición de compras con dos perfiles diferentes. <strong>Recordemos que las compras con <code>StoreKit</code> se asocian al perfil de iCloud</strong> y somos nosotros los que debemos establecer la relación las cuentas propias de nuestra aplicación o plataforma.</p>\n\n\n\n<figure class=\"wp-block-image size-large\"><img loading=\"lazy\" width=\"970\" height=\"719\" src=\"https://applecoding.com/wp-content/uploads/2020/03/ios-in-app-purchase-screen-100653513-large970.idge_.png\" alt=\"\" class=\"wp-image-4812\" srcset=\"https://applecoding.com/wp-content/uploads/2020/03/ios-in-app-purchase-screen-100653513-large970.idge_.png 970w, https://applecoding.com/wp-content/uploads/2020/03/ios-in-app-purchase-screen-100653513-large970.idge_-300x222.png 300w, https://applecoding.com/wp-content/uploads/2020/03/ios-in-app-purchase-screen-100653513-large970.idge_-768x569.png 768w\" sizes=\"(max-width: 970px) 100vw, 970px\" /><figcaption>El sistema operativo se encarga de mostrar al usuario la interfaz de compra</figcaption></figure>\n\n\n\n<p><strong>El resultado de la transacción se recibe en otro delegado</strong> que podemos implementar en una nueva extensión:</p>\n\n\n\n<pre class=\"EnlighterJSRAW\" data-enlighter-language=\"generic\" data-enlighter-theme=\"\" data-enlighter-highlight=\"\" data-enlighter-linenumbers=\"\" data-enlighter-lineoffset=\"\" data-enlighter-title=\"\" data-enlighter-group=\"\">extension IAPManager: SKPaymentTransactionObserver {\n    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {\n        \n    }\n}</pre>\n\n\n\n<p>Este método es llamado cada vez que una de las transacciones de la cola cambia de estado. <strong>En la propiedad <code>transactions</code> recibimos las transacciones que han cambiado su estado</strong>. El estado es una enumeración que se guarda en la propiedad <code>transactionState</code> de cada una de ellas. Veamos un ejemplo de cómo gestionar la respuesta:</p>\n\n\n\n<pre class=\"EnlighterJSRAW\" data-enlighter-language=\"generic\" data-enlighter-theme=\"\" data-enlighter-highlight=\"\" data-enlighter-linenumbers=\"\" data-enlighter-lineoffset=\"\" data-enlighter-title=\"\" data-enlighter-group=\"\">transactions.forEach {\n    switch $0.transactionState {\n    case .purchasing: ()\n    case .deferred: ()\n    case .failed, .purchased, .restored: SKPaymentQueue.default().finishTransaction($0)\n    }\n}</pre>\n\n\n\n<p><strong>Es fundamental finalizar la transacción</strong> llamando a la función <code>finishTransaction</code> en los casos indicados porque si no lo hacemos, seguirá en la cola la próxima vez que la consultemos y generará errores. La descripción de los estados es la siguiente:</p>\n\n\n\n<ul><li><code>purchasing</code> indica que la compra sigue pendiente de ser procesa por el AppStore, <strong>debemos esperar a que cambie el estado</strong> y se vuelva llamar a la función para tomar una acción.</li><li><code><code>deferred</code></code> se ha detenido la compra porque se debe tomar alguna acción externa como <strong>confirmar la compra cuando se usa control parental en el dispositivo</strong>. Se puede informar al usuario y esperar a que llegue otro evento.</li><li><code>failed</code> la compra ha fallado, <strong>podemos consultar el error en la propiedad <code>error</code> de la transacción</strong>.</li><li><code>purchased</code> la compra se ha realizado correctamente y ya podemos ejecutarla en nuestra aplicación o informar a la plataforma sobre la misma.</li><li><code>restored</code> en el caso, que veremos a continuación, de haber restaurado una compra indica que se ha realizado de forma correcta y podemos ejecutar la acción pertinente como en el caso anterior.</li></ul>\n\n\n\n<p>Debemos tratar cada estado y realizar las acciones apropiadas. <strong>Recordemos que somos nosotros como desarrolladores los encargados de asegurar que el usuario obtiene el servicio o característica por el que acaba de pagar</strong>. En ciertos casos, como el cambio de terminal, Apple obliga a implementar un mecanismo que permita recuperar la compra.</p>\n\n\n\n<h2>Recuperación de compras</h2>\n\n\n\n<p>Si el usuario ha cambiado de terminal y sigue utilizando la misma cuenta de iCloud, puede recuperar una compra anterior si nuestra aplicación no usa un sistema de respaldo de las compras. Para ello, <strong>Apple permite utilizar <code>StoreKit</code> para consultar y restaurar las compras</strong> realizadas por el usuario anteriormente. Añadiremos un método para acceder a esta característica.</p>\n\n\n\n<pre class=\"EnlighterJSRAW\" data-enlighter-language=\"generic\" data-enlighter-theme=\"\" data-enlighter-highlight=\"\" data-enlighter-linenumbers=\"\" data-enlighter-lineoffset=\"\" data-enlighter-title=\"\" data-enlighter-group=\"\">func restore(withUsername username: String? = nil) {\n    SKPaymentQueue.default().add(self)\n    SKPaymentQueue.default().restoreCompletedTransactions(withApplicationUsername: username)\n}</pre>\n\n\n\n<p>Ahora podemos observar el uso del <strong>username </strong>que implementamos anteriormente. Podemos indicar que se recuperen únicamente las compras asociadas un identificador interno de usuario para que no se pueda volver a utilizar la compra para varias cuentas. </p>\n\n\n\n<blockquote class=\"wp-block-quote is-style-large\"><p>Es obligatorio que nuestra pantalla de compra tenga el botón «Restaurar compras» bien visible por el usuario, si no, la app será rechazada.</p></blockquote>\n\n\n\n<p>Esta función lo que hace es volver al estado <code>restored</code> todas las transacciones que se habían finalizado anteriormente y llama al método <strong><code data-enlighter-language=\"generic\" class=\"EnlighterJSRAW\">paymentQueue(updatedTransactions:)</code></strong> cuando se produce el cambio.</p>\n\n\n\n<h2>Suscripciones con renovación automática</h2>\n\n\n\n<p>En el caso de las suscripciones con renovación automática se requiere la implementación de <strong>un sistema de <em>backend</em> que verifique tanto la compra como el estado de las suscripción</strong>. Para ello debemos enviar al servidor la información del recibo de compra que encontramos en esta URL de nuestro terminal <code><code data-enlighter-language=\"generic\" class=\"EnlighterJSRAW\">Bundle.main.appStoreReceiptURL</code>.</code></p>\n\n\n\n<p>La forma de validar que la compra y que los datos son correctos es llamando al <em>endpoint</em> en Apple, <strong><a href=\"https://developer.apple.com/documentation/storekit/in-app_purchase/validating_receipts_with_the_app_store\"><code data-enlighter-language=\"generic\" class=\"EnlighterJSRAW\">verifyReceipt</code></a> </strong>desde el backend. </p>\n\n\n\n<p>Importante esto último porque <strong>Apple no recomienda realizar la llamada desde las aplicaciones</strong> ya que no se puede garantizar una conexión segura al ser un terminal móvil y no controlar la red a la que puede estar conectado.</p>\n\n\n\n<figure class=\"wp-block-image size-large\"><img loading=\"lazy\" width=\"1024\" height=\"538\" src=\"https://applecoding.com/wp-content/uploads/2020/03/iu-1024x538.jpeg\" alt=\"\" class=\"wp-image-4814\" srcset=\"https://applecoding.com/wp-content/uploads/2020/03/iu-1024x538.jpeg 1024w, https://applecoding.com/wp-content/uploads/2020/03/iu-300x158.jpeg 300w, https://applecoding.com/wp-content/uploads/2020/03/iu-768x403.jpeg 768w, https://applecoding.com/wp-content/uploads/2020/03/iu.jpeg 1200w\" sizes=\"(max-width: 1024px) 100vw, 1024px\" /><figcaption>Apple permite a los usuarios gestionar las suscripciones desde el propio sistema</figcaption></figure>\n\n\n\n<p>Como las suscripciones pueden cambiar en cualquier momento, tenemos que indicarle a Apple un <em>endpoint</em> en nuestro sistema de <em>backend</em> para que <strong>nos notifique de los cambios de estado de las suscripciones</strong>. </p>\n\n\n\n<p>Esta URL se puede añadir desde App Store Connect en la información general de la aplicación rellenando el campo <strong>URL del estado de la suscripción</strong>. Ahora será responsabilidad del backend avisar a nuestra aplicación, cuando esta se ejecute, del estado actual para poder realizar las acciones necesarias.</p>\n\n\n\n<h2>Ya puedes implementar tus compras in-app</h2>\n\n\n\n<p>Aunque seguramente nos hemos dejado algunas cosas en el tintero, <strong>como pueden ser las opciones avanzadas de algunos tipos de compras y suscripciones</strong>, con este tutorial puedes comenzar a implementar compras básicas en tu app y has abierto el camino para explorar opciones más avanzadas. </p>\n\n\n\n<p>Actualmente Apple ofrece opciones como promociones para el precio o en un periodo determinado, periodos de gracia antes de cancelar las suscripción, asignar una cantidad de ítems a una compra&#8230; y <strong>cada WWDC añade alguna forma más que intenta ofrecer nuevas soluciones tanto a los desarrolladores como a los usuarios</strong>.</p>\n\n\n\n<p>Ya sólo nos queda desearte mucha suerte con tu nueva aplicación, y si tiene cualquier duda puedes dejarnos un comentario en este post o en nuestras redes sociales. <strong>Un saludo y Good Apple Coding.</strong></p>\n",
+            "protected": false
+        },
+        "excerpt":
+        {
+            "rendered": "<p>Una de las formas de monetización que más dinero genera en el App Store son las compras dentro de la aplicación. Te enseñamos a cómo implementarlas en tu app.</p>\n",
+            "protected": false
+        },
+        "author": 6,
+        "featured_media": 4814,
+        "comment_status": "open",
+        "ping_status": "closed",
+        "sticky": false,
+        "template": "",
+        "format": "standard",
+        "meta":
+        {
+            "spay_email": ""
+        },
+        "categories":
+        [
+            2
+        ],
+        "tags":
+        [
+            496,
+            495
+        ],
+        "jetpack_featured_media_url": "https://applecoding.com/wp-content/uploads/2020/03/iu.jpeg",
+        "amp_enabled": true,
+        "_links":
+        {
+            "self":
+            [
+                {
+                    "href": "https://applecoding.com/wp-json/wp/v2/posts/4803"
+                }
+            ],
+            "collection":
+            [
+                {
+                    "href": "https://applecoding.com/wp-json/wp/v2/posts"
+                }
+            ],
+            "about":
+            [
+                {
+                    "href": "https://applecoding.com/wp-json/wp/v2/types/post"
+                }
+            ],
+            "author":
+            [
+                {
+                    "embeddable": true,
+                    "href": "https://applecoding.com/wp-json/wp/v2/users/6"
+                }
+            ],
+            "replies":
+            [
+                {
+                    "embeddable": true,
+                    "href": "https://applecoding.com/wp-json/wp/v2/comments?post=4803"
+                }
+            ],
+            "version-history":
+            [
+                {
+                    "count": 14,
+                    "href": "https://applecoding.com/wp-json/wp/v2/posts/4803/revisions"
+                }
+            ],
+            "predecessor-version":
+            [
+                {
+                    "id": 4975,
+                    "href": "https://applecoding.com/wp-json/wp/v2/posts/4803/revisions/4975"
+                }
+            ],
+            "wp:featuredmedia":
+            [
+                {
+                    "embeddable": true,
+                    "href": "https://applecoding.com/wp-json/wp/v2/media/4814"
+                }
+            ],
+            "wp:attachment":
+            [
+                {
+                    "href": "https://applecoding.com/wp-json/wp/v2/media?parent=4803"
+                }
+            ],
+            "wp:term":
+            [
+                {
+                    "taxonomy": "category",
+                    "embeddable": true,
+                    "href": "https://applecoding.com/wp-json/wp/v2/categories?post=4803"
+                },
+                {
+                    "taxonomy": "post_tag",
+                    "embeddable": true,
+                    "href": "https://applecoding.com/wp-json/wp/v2/tags?post=4803"
+                }
+            ],
+            "curies":
+            [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    },
+    {
+        "id": 4764,
+        "date": "2020-03-06T08:52:50",
+        "date_gmt": "2020-03-06T07:52:50",
+        "guid":
+        {
+            "rendered": "https://applecoding.com/?p=4764"
+        },
+        "modified": "2020-03-06T10:17:50",
+        "modified_gmt": "2020-03-06T09:17:50",
+        "slug": "como-traducir-apps-localizacion",
+        "status": "publish",
+        "type": "post",
+        "link": "https://applecoding.com/tutoriales/como-traducir-apps-localizacion",
+        "title":
+        {
+            "rendered": "Cómo traducir (localizar) una app en iOS con Xcode"
+        },
+        "content":
+        {
+            "rendered": "\n<p>Al fin te has decidido ha realizar tu primera aplicación para alguno de los sistemas de Apple. Llevas varios meses utilizando Xcode, escribiendo código, configurando las vistas y probando como un loco los cómo queda tu aplicación. <strong>Pero llegado el momento del lanzamiento te das cuenta de que los textos sólo están en un idioma</strong>. ¿Cómo puedes añadir más idiomas y no sufrir demasiado en el intento? A continuación la respuesta.</p>\n\n\n\n<h2>Añade los idiomas que quieres soportar</h2>\n\n\n\n<p>Lo primero y más importante, es decidir los idiomas que vas a soportar. La idea es que mientras más mejor, pero el proceso de traducción lleva tiempo y obviamente el conocimiento de cada idioma. Hoy veremos cómo hacerlo de manera que interrumpa lo menos posible nuestra labor de programación, evitando duplicar esfuerzos. Pero no debemos olvidar que <strong>para la versión final de nuestra aplicación necesitamos que todos los textos que se muestran en la interfaz estén traducidos</strong>.</p>\n\n\n\n<p>Es posible que en determinadas circunstancias sea necesario implementar mecanismos adicionales a los que vamos a ver aquí, o quizás buscar otro enfoque, pero <strong>nuestras recomendaciones base son las siguientes</strong>:</p>\n\n\n\n<ul><li><strong>Los textos por defecto deberán ir en inglés</strong>: Si te has lanzado al mundo del desarrollo seguramente tengas un nivel suficiente para que los usuarios anglosajones puedan entenderte. Además, el idioma de desarrollo por defecto en Xcode es el inglés y simplifica mucho las cosas que para tu aplicación también.</li><li><strong>Añade al menos una variante de español</strong>: Como lector de Apple Coding suponemos te desenvuelvas bien en este idioma, y aunque al igual que ocurre con el inglés y con otras lenguas, hay muchas variaciones idiomáticas,<strong> te animamos a soportar al menos una variante de tu propio idioma</strong>.</li><li><strong>Los textos que lleguen del servidor deberían estar ya traducidos</strong> No vamos a hacer el trabajo dos veces, si tu aplicación hace uso de servicios de <em>backend</em> debes solicitar a los encargados que te envíen los textos ya traducidos al idioma correspondiente. Por norma general, <strong>pedirán que le envíes una variable con el idioma configurado en la aplicación</strong> para las peticiones que realices.</li></ul>\n\n\n\n<p>Respecto a éste último punto, puedes conocer el idioma configurado en la aplicación en cualquier momento ejecutando:</p>\n\n\n\n<pre class=\"wp-block-preformatted\">Locale.current.languageCode // en\nLocale.current.identifier // en_US</pre>\n\n\n\n<p>El primero nos indica el idioma y el segundo añade también la región y la variación. Por ejemplo <strong>el español puede ser de España (es_ES), de Chile (es_CL)&#8230;</strong> Si únicamente tenemos una variante pero no la que el usuario tiene configurada, se utilizará igualmente si el idioma coincide.</p>\n\n\n\n<blockquote class=\"wp-block-quote is-style-large\"><p>Las variaciones idiomáticas permiten distinguir los cambios en palabras y expresiones entre el mismo idioma cuando se habla en regiones diferentes.</p></blockquote>\n\n\n\n<p>Aunque es posible hacerlo, no recomendamos ni por usabilidad de cara al usuario ni por complejidad a la hora de implementarlo, permitir cambiar el idioma dentro de la propia aplicación. Es decir, <strong>la aplicación utilizará el idioma que esté configurado en el terminal.</strong> Aunque desde iOS 13 es posible cambiar el idioma de cada aplicación desde el menú de Ajustes.</p>\n\n\n\n<p>Una vez tengamos claros los idiomas a soportar, seleccionamos en la columna izquierda de la venta de Xcode 11 la jerarquía de archivos y pulsamos sobre el raíz del proyecto. Luego escogemos el proyecto en la lista, la <strong>pestaña <em>Info</em> y en la sección <em>Localizations</em></strong> vemos <em>Base</em> e <em>English</em> &#8211; <em>Development Language</em>. Pulsamos + para añadir el que queremos.</p>\n\n\n\n<div class=\"wp-block-image\"><figure class=\"aligncenter size-large\"><img loading=\"lazy\" width=\"1024\" height=\"640\" src=\"https://applecoding.com/wp-content/uploads/2020/03/Captura-de-pantalla-2020-03-03-a-las-16.05.01-1-1024x640.png\" alt=\"\" class=\"wp-image-4766\" srcset=\"https://applecoding.com/wp-content/uploads/2020/03/Captura-de-pantalla-2020-03-03-a-las-16.05.01-1-1024x640.png 1024w, https://applecoding.com/wp-content/uploads/2020/03/Captura-de-pantalla-2020-03-03-a-las-16.05.01-1-300x188.png 300w, https://applecoding.com/wp-content/uploads/2020/03/Captura-de-pantalla-2020-03-03-a-las-16.05.01-1-768x480.png 768w, https://applecoding.com/wp-content/uploads/2020/03/Captura-de-pantalla-2020-03-03-a-las-16.05.01-1-1536x960.png 1536w, https://applecoding.com/wp-content/uploads/2020/03/Captura-de-pantalla-2020-03-03-a-las-16.05.01-1-2048x1280.png 2048w\" sizes=\"(max-width: 1024px) 100vw, 1024px\" /></figure></div>\n\n\n\n<p>Selecciona los idiomas que quieres añadir. La base de todo es que<strong> los archivos que pueden traducirse, pasarán a tener una variante para cada uno de los idiomas</strong>. Pueden ser <em>storyboards</em>, imágenes, archivos específicos de traducción&#8230;</p>\n\n\n\n<h2>Traduciendo textos</h2>\n\n\n\n<h3>Textos del <em>Storyboard</em></h3>\n\n\n\n<p>Dentro de Xcode <strong>existen dos métodos para introducir textos que se mostrarán en la interfaz: interfaz y código</strong>. Además existe un lenguaje <em>Base</em> para las interfaces que si se utiliza y no se tiene ningún fichero de traducción específico para un idioma en concreto, se usarán los textos del <em>Base</em>. <strong>Si tu usuario es hindú, y no tienes el hindi soportado, cogerá por defecto el idioma <em>Base</em></strong>.</p>\n\n\n\n<p>Para las interfaces hay dos manera de trabajar, bien con un <em>Storyboard</em> por cada idioma o un Storyboard para el idioma principal o para el <em>Base</em>, y luego archivos de texto plano para los textos que contenga la interfaz. Fijémonos por ejemplo en <em>LaunchScreen</em>. <strong>En la columna del navegador de archivo ha aparecido una flecha porque tenemos el archivo con traducciones</strong>. </p>\n\n\n\n<div class=\"wp-block-image\"><figure class=\"aligncenter size-large\"><img loading=\"lazy\" width=\"474\" height=\"128\" src=\"https://applecoding.com/wp-content/uploads/2020/03/Captura-de-pantalla-2020-03-03-a-las-16.12.03.png\" alt=\"LaunchScreen\" class=\"wp-image-4767\" srcset=\"https://applecoding.com/wp-content/uploads/2020/03/Captura-de-pantalla-2020-03-03-a-las-16.12.03.png 474w, https://applecoding.com/wp-content/uploads/2020/03/Captura-de-pantalla-2020-03-03-a-las-16.12.03-300x81.png 300w\" sizes=\"(max-width: 474px) 100vw, 474px\" /></figure></div>\n\n\n\n<p>La recomendación es usar el <em>Base</em> o el idioma por defecto para la parte interfaz y dejar los demás como archivos de texto. Estos archivos podríamos modificarlos a mano cada vez que añadimos algún texto nuevo pero ¡no!&#8230; <strong>si sigues leyendo te enseñamos cómo hacerlo de la forma adecuada</strong>.</p>\n\n\n\n<h3>Traduciendo <em>String</em> en el código</h3>\n\n\n\n<p>Internacionalizar los textos de nuestro código es tremendamente sencillo, y <strong>más si lo tenemos en cuenta desde el inicio del desarrollo</strong>. Simplemente hay que usar la función <code>NSLocalizedString</code> cada vez que vayamos asignar un <code>String</code> a cualquier elemento de nuestra interfaz y el sistema se encargará de mostrar el texto en el idioma correcto.</p>\n\n\n\n<pre class=\"wp-block-preformatted\">NSLocalizedString(\"aviso_error\", comment: \"Aviso mostrado cuando se produce un error\")</pre>\n\n\n\n<p>Los parámetros enviados a la función son los siguientes:</p>\n\n\n\n<ul><li><strong>key</strong>: es la clave que se utiliza modo de identificador de la cadena de texto a traducir</li><li><strong>comment</strong>: comentario para el traductor en el que puede incluso añadirse contexto para facilitar su tarea</li></ul>\n\n\n\n<p>El archivo que utiliza el sistema para conocer la equivalencia de cada idioma es <strong>Localizable.strings</strong> y también se desplegará en el navegador de archivos para que tengamos uno por cada idioma. El contenido del mismo tendrá las claves que hemos comentado anteriormente y el texto correspondiente para cada idioma:</p>\n\n\n\n<pre class=\"wp-block-preformatted\">\"aviso_error\" = \"Error\";</pre>\n\n\n\n<p>Mucho cuidado con la manipulación de este archivo porque el compilador no revisa el formato pero, sin embargo, no compila cuando este es erróneo. No lo busques en el proyecto porque es necesario añadirlo de forma manual, al igual que se añade cualquier archivo al proyecto, pero más tarde veremos cómo hacerlo de forma mucho más sencilla.</p>\n\n\n\n<blockquote class=\"wp-block-quote is-style-large\"><p>Aunque es posible manipular los ficheros de traducción a mano, es mucho mejor dejar que Xcode lo haga por tí.</p></blockquote>\n\n\n\n<h4>Textos especiales</h4>\n\n\n\n<p><strong>Existen algunos textos especiales, como pueden ser el nombre de la aplicación, el texto personalizado al pedir permisos de cámara, localización, notificaciones&#8230; que también son susceptibles de traducción</strong>. El formato es igual que el anterior pero el archivo con los textos en este caso será <strong>InfoPlist.strings</strong>. Este fichero contiene las claves que asigna Apple a cada tipo de texto. Al igual que el anterior, vamos a esperar a que Xcode lo genere y gestione de forma automática.</p>\n\n\n\n<h2>Realizar la traducción</h2>\n\n\n\n<p>Llegó la hora de la verdad. A continuación vamos a exportar los textos para su traducción. Manteniendo seleccionado el proyecto pulsamos el menú <strong>Editor &gt; Export for Localization&#8230;</strong> y le indicamos la ruta donde guardará los archivos. La división dentro de la carpeta contendrá un <strong>.xcloc </strong>para cada idioma. </p>\n\n\n\n<p>Abrimos el que vayamos a modificar, navegamos a la carpeta <strong>Localized Contents</strong> y ahí estará el fichero que nos importa con extensión .<strong>xliff</strong>. Al abrirlo con un editor de texto veremos que es un XML bastante complicado, por eso <strong>recomendamos utilizar alguna aplicación como <a href=\"https://apps.apple.com/es/app/xlifftool/id1074282695?mt=12\">XLIFFTool</a>.</strong></p>\n\n\n\n<div class=\"wp-block-image\"><figure class=\"aligncenter size-large\"><img loading=\"lazy\" width=\"1024\" height=\"651\" src=\"https://applecoding.com/wp-content/uploads/2020/03/Captura-de-pantalla-2020-03-03-a-las-16.39.44-1024x651.png\" alt=\"\" class=\"wp-image-4769\" srcset=\"https://applecoding.com/wp-content/uploads/2020/03/Captura-de-pantalla-2020-03-03-a-las-16.39.44-1024x651.png 1024w, https://applecoding.com/wp-content/uploads/2020/03/Captura-de-pantalla-2020-03-03-a-las-16.39.44-300x191.png 300w, https://applecoding.com/wp-content/uploads/2020/03/Captura-de-pantalla-2020-03-03-a-las-16.39.44-768x488.png 768w, https://applecoding.com/wp-content/uploads/2020/03/Captura-de-pantalla-2020-03-03-a-las-16.39.44-1536x976.png 1536w, https://applecoding.com/wp-content/uploads/2020/03/Captura-de-pantalla-2020-03-03-a-las-16.39.44.png 1690w\" sizes=\"(max-width: 1024px) 100vw, 1024px\" /></figure></div>\n\n\n\n<p>En la primera sección se muestra la traducción del nombre de nuestra aplicación (mediante el archivo <strong>InfoPlist.strings</strong>) y en segundo lugar el texto que hemos añadido por código para <strong>Localizable.string</strong>. Para cada uno de ellos se muestra el comentario de ayuda que se utiliza para dar contexto a la traducción. Si hubiese algún <em>Storyboard</em> también aparecería como otra sección.</p>\n\n\n\n<p>Después de rellenar los textos, tenemos que importar los archivos de nuevo a Xcode. Con el proyecto seleccionado como antes, accedemos al menú <strong>Editor &gt; Import Localizations&#8230;</strong> y escogemos los <strong>.xcloc</strong> de cada idioma. Nos saldrá un asistente indicado los cambios que se aplicarán y tras aceptar ya tendremos nuestros textos traducidos.</p>\n\n\n\n<p>Hemos hecho hincapié en que <strong>la forma más sencilla es permitir que Xcode realice este trabajo</strong> y manipule los archivos exportando e importando ya que nos evitaremos olvidos y problemas de formato en las traducciones.</p>\n\n\n\n<h4>Plurales</h4>\n\n\n\n<p>Esta parte es sin duda la más complicada del proceso. Cuando queremos añadir un plural, éste depende de una variable que tenemos que añadir a la función que realiza la traducción. Podemos hacerlo de la siguiente forma:</p>\n\n\n\n<pre class=\"wp-block-preformatted\">let elementos = 2\nString.localizedStringWithFormat(NSLocalizedString(\"%d elemento(s)\", comment: \"\"), elementos)</pre>\n\n\n\n<p>Si ejecutamos la exportación se añadiría como texto normal pero Xcode a la hora de traducir, antes de los <strong>.strings</strong> busca los .<strong>stringsdict</strong>. Este último tenemos que crearlo a mano, elegimos <strong>File &gt; New &gt; File&#8230;</strong>, seleccionamos <strong>Stringsdict File</strong> y lo nombramos como <strong>Localizable</strong>.</p>\n\n\n\n<div class=\"wp-block-image\"><figure class=\"aligncenter size-large\"><img loading=\"lazy\" width=\"1024\" height=\"736\" src=\"https://applecoding.com/wp-content/uploads/2020/03/Captura-de-pantalla-2020-03-03-a-las-16.58.43-1024x736.png\" alt=\"\" class=\"wp-image-4771\" srcset=\"https://applecoding.com/wp-content/uploads/2020/03/Captura-de-pantalla-2020-03-03-a-las-16.58.43-1024x736.png 1024w, https://applecoding.com/wp-content/uploads/2020/03/Captura-de-pantalla-2020-03-03-a-las-16.58.43-300x216.png 300w, https://applecoding.com/wp-content/uploads/2020/03/Captura-de-pantalla-2020-03-03-a-las-16.58.43-768x552.png 768w, https://applecoding.com/wp-content/uploads/2020/03/Captura-de-pantalla-2020-03-03-a-las-16.58.43.png 1460w\" sizes=\"(max-width: 1024px) 100vw, 1024px\" /></figure></div>\n\n\n\n<p>Antes de seguir, en el panel de la derecha donde se muestran los atributos del archivo pulsamos el botón <strong>Localize&#8230;</strong> y seleccionamos los idiomas que queremos que tenga para añadir los idiomas que soporta el archivo. Si lo abrimos veremos la siguiente estructura.</p>\n\n\n\n<figure class=\"wp-block-image size-large\"><img loading=\"lazy\" width=\"956\" height=\"484\" src=\"https://applecoding.com/wp-content/uploads/2020/03/Captura-de-pantalla-2020-03-03-a-las-17.01.42.png\" alt=\"\" class=\"wp-image-4773\" srcset=\"https://applecoding.com/wp-content/uploads/2020/03/Captura-de-pantalla-2020-03-03-a-las-17.01.42.png 956w, https://applecoding.com/wp-content/uploads/2020/03/Captura-de-pantalla-2020-03-03-a-las-17.01.42-300x152.png 300w, https://applecoding.com/wp-content/uploads/2020/03/Captura-de-pantalla-2020-03-03-a-las-17.01.42-768x389.png 768w\" sizes=\"(max-width: 956px) 100vw, 956px\" /></figure>\n\n\n\n<p>Vamos a ver lo que representa cada valor:</p>\n\n\n\n<ul><li><strong>Localized String Key</strong> es el valor que utilizamos como clave. Si está presente, no se buscará la traducción en el .<strong>strings</strong> si no en este archivo. Cambiamos dicha clave a <strong>%d elemento(s)</strong>.</li><li><strong>Localized Format Key</strong> es el formato que vamos a usar como variable. Eliminamos el valor actual y ponemos <strong>%#@elementos@</strong>.</li><li><strong>VARIABLE</strong> este es el valor variable que hemos añadido en el campo anterior pero sin el formateo: <strong>elementos</strong>.</li><li><strong>NSStringFormatValueTypeKey</strong> es el tipo de valor, que en nuestro caso es un número por lo que colocamos el valor <strong>d</strong>.</li><li><strong>one, other&#8230;</strong> aquí pondremos el texto sabiendo que la cantidad se sustituirá por <strong>%d</strong>. En nuestro caso si son 0 o muchos el texto estará en plural pero vemos que es posible cambiar el literal cuando son dos, muchos, pocos&#8230;</li></ul>\n\n\n\n<figure class=\"wp-block-image size-large\"><img loading=\"lazy\" width=\"960\" height=\"340\" src=\"https://applecoding.com/wp-content/uploads/2020/03/Captura-de-pantalla-2020-03-03-a-las-17.17.07.png\" alt=\"\" class=\"wp-image-4777\" srcset=\"https://applecoding.com/wp-content/uploads/2020/03/Captura-de-pantalla-2020-03-03-a-las-17.17.07.png 960w, https://applecoding.com/wp-content/uploads/2020/03/Captura-de-pantalla-2020-03-03-a-las-17.17.07-300x106.png 300w, https://applecoding.com/wp-content/uploads/2020/03/Captura-de-pantalla-2020-03-03-a-las-17.17.07-768x272.png 768w\" sizes=\"(max-width: 960px) 100vw, 960px\" /></figure>\n\n\n\n<p>Ahora si ejecutamos veremos que para muestra el singular o el plural según el número de elementos indicados en el valor de la variable <code>elementos</code>.</p>\n\n\n\n<h2>También en SwiftUI</h2>\n\n\n\n<p>Seguro que te está preguntando qué pasa con la traducción de las interfaces en <strong>SwiftUI</strong>. Si reproducimos los pasos descritos, lo primero que nos llama la atención es que no tenemos <em>Storyboards</em> pero si que tenemos las <code>View</code> que definen la interfaz en la aplicación.<strong> Se podría pensar que con utilizar <code>NSLocalizedString</code> directamente en las vistas podríamos realizar la traducción pero Apple ha simplificado el procedimiento</strong>.</p>\n\n\n\n<p>Simplemente con usar <code>Text()</code> o el texto de un <code>Button()</code> donde el parámetro sea de tipo <code>StringProtocol</code>, <strong>Xcode añadirá a nuestros archivos de traducción los textos de la interfaz</strong>.</p>\n\n\n\n<p>Esperamos que este pequeño tutorial ayude en lo posible a simplificar el proceso de las traducciones o que te permita lanzar esa aplicación en la que llevas trabajando meses con soporte para varios idiomas.<strong> Para mal o para bien este es el método propuesto por Apple y por su plataforma Xcode y os hemos contado la mejor forma de usarlo</strong>. Un saludo y Good Apple Coding.</p>\n",
+            "protected": false
+        },
+        "excerpt":
+        {
+            "rendered": "<p>Hoy os enseñamos cómo funciona el flujo de traducción de una app a otros idiomas en Xcode, lo que se conoce como localización. Un proceso simple tanto para UIKit como SwiftUI.</p>\n",
+            "protected": false
+        },
+        "author": 6,
+        "featured_media": 4797,
+        "comment_status": "open",
+        "ping_status": "closed",
+        "sticky": false,
+        "template": "",
+        "format": "standard",
+        "meta":
+        {
+            "spay_email": ""
+        },
+        "categories":
+        [
+            2
+        ],
+        "tags":
+        [
+            493
+        ],
+        "jetpack_featured_media_url": "https://applecoding.com/wp-content/uploads/2020/03/applovin-localization-international-mobilegaming-Asia-blog-1-1.jpg",
+        "amp_enabled": true,
+        "_links":
+        {
+            "self":
+            [
+                {
+                    "href": "https://applecoding.com/wp-json/wp/v2/posts/4764"
+                }
+            ],
+            "collection":
+            [
+                {
+                    "href": "https://applecoding.com/wp-json/wp/v2/posts"
+                }
+            ],
+            "about":
+            [
+                {
+                    "href": "https://applecoding.com/wp-json/wp/v2/types/post"
+                }
+            ],
+            "author":
+            [
+                {
+                    "embeddable": true,
+                    "href": "https://applecoding.com/wp-json/wp/v2/users/6"
+                }
+            ],
+            "replies":
+            [
+                {
+                    "embeddable": true,
+                    "href": "https://applecoding.com/wp-json/wp/v2/comments?post=4764"
+                }
+            ],
+            "version-history":
+            [
+                {
+                    "count": 17,
+                    "href": "https://applecoding.com/wp-json/wp/v2/posts/4764/revisions"
+                }
+            ],
+            "predecessor-version":
+            [
+                {
+                    "id": 4802,
+                    "href": "https://applecoding.com/wp-json/wp/v2/posts/4764/revisions/4802"
+                }
+            ],
+            "wp:featuredmedia":
+            [
+                {
+                    "embeddable": true,
+                    "href": "https://applecoding.com/wp-json/wp/v2/media/4797"
+                }
+            ],
+            "wp:attachment":
+            [
+                {
+                    "href": "https://applecoding.com/wp-json/wp/v2/media?parent=4764"
+                }
+            ],
+            "wp:term":
+            [
+                {
+                    "taxonomy": "category",
+                    "embeddable": true,
+                    "href": "https://applecoding.com/wp-json/wp/v2/categories?post=4764"
+                },
+                {
+                    "taxonomy": "post_tag",
+                    "embeddable": true,
+                    "href": "https://applecoding.com/wp-json/wp/v2/tags?post=4764"
+                }
+            ],
+            "curies":
+            [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    },
+    {
+        "id": 4785,
+        "date": "2020-03-04T22:33:35",
+        "date_gmt": "2020-03-04T21:33:35",
+        "guid":
+        {
+            "rendered": "https://applecoding.com/?p=4785"
+        },
+        "modified": "2020-03-05T12:15:33",
+        "modified_gmt": "2020-03-05T11:15:33",
+        "slug": "cambio-normas-app-store-abril-2020",
+        "status": "publish",
+        "type": "post",
+        "link": "https://applecoding.com/noticias/cambio-normas-app-store-abril-2020",
+        "title":
+        {
+            "rendered": "Cambio de normas en el App Store para abril de 2020"
+        },
+        "content":
+        {
+            "rendered": "\n<p>Apple ha cambiado sus <em><a rel=\"noreferrer noopener\" href=\"https://developer.apple.com/app-store/review/guidelines/\" target=\"_blank\">Review Guidelines</a></em> con nuevas inclusiones importantes que siempre hemos de tener en cuenta a la hora de subir nuestras apps. Muchas de estas, <strong>ya las venían avisando de hace tiempo y ahora ya tienen fecha concreta</strong>. </p>\n\n\n\n<p>Siempre hay algunas más polémicas que otras, pero sin duda (en mi opinión) <strong>todas tienen una razón de ser muy necesaria para ir mejorando la calidad de los desarrollos</strong> y que todos podamos aprovechar las nuevas funciones de los nuevos sistemas también en las apps de terceros.</p>\n\n\n\n<p>Repasemos <strong>qué has de tener en cuenta a partir de ahora</strong> si quieres subir tu app o actualización al App Store.</p>\n\n\n\n<ul><li>Desde el 30 de abril de 2020, <strong>todas las apps deberán estar generadas con la SDK de iOS 13.0 en adelante</strong>, para lo que será de uso obligado <strong>Xcode 11</strong> para subir cualquier nueva app o actualización. Actualmente el 77% de los dispositivos vendidos en los últimos 4 años ya tiene iOS 13 y el 79% de los iPad, así que ya no hay excusa.</li><li>Este hecho no cambia que <strong>pueda seguirse dando soporte a las apps de sistemas más antiguos</strong>, en concreto hasta iOS 8.0.</li><li>Cualquier app que use un sistema de terceros como Facebook, Google, Twitter, Linked, Amazon o WeChat para registrar y permitir el acceso a la cuenta principal del usuario en la app, <strong>deberá implementar «Sign in with Apple» de forma obligatoria desde finales de abril de 2020</strong>.</li><li>No requerirán este servicio: las apps que <strong>usen su propio sistema de registro</strong>, las apps de educación, empresas o negocios que requieran acceder a cuentas existentes de Apple de educación o negocios, <strong>apps gubernamentales</strong> o que usen sistemas de identificación ciudadana creadas a tal efecto o apps que usen<strong> alguno de los servicios mencionados arriba para acceder a los servicios específicos de estas compañías</strong> (como un cliente de Twitter que use la autenticación de Twitter).</li><li>Las apps de citas o las de «leer la fortuna» (tarot, horóscopo, etc&#8230;) serán sometidas a una revisión extra y <strong>serán rechazadas si no proveen de una experiencia única de gran calidad</strong>. Esto quiere decir que cualquier app sencilla que no aporte nada, en estas categorías, no será aceptada.</li><li>Las apps que pidan reseñas a los usuarios de la app,<strong> sin usar la API oficial a tal efecto</strong>, serán rechazadas desde abril.</li><li><strong>Las notificaciones <em>push</em> se abren al <em>marketing</em></strong>. Pero ojo, <strong>habrá que crear un formulario de alta a este tipo de servicio de notificaciones en nuestra app</strong>, con toda la información que ello involucre (y no podrá activarse sin dicho consentimiento explícito). Y además <strong>habrá que crear un sistema que permite darse de baja</strong> de estas al usuario en cualquier momento.</li><li><strong>Apple estará especialmente vigilante</strong> con este tipo de apps para que no abusen de este servicio en ningún momento, pudiendo los desarrolladores perder sus privilegios como tal.</li></ul>\n\n\n\n<div class=\"wp-block-image\"><figure class=\"aligncenter size-large\"><img loading=\"lazy\" width=\"450\" height=\"253\" src=\"https://applecoding.com/wp-content/uploads/2020/03/450_1000-2.jpg\" alt=\"\" class=\"wp-image-4787\" srcset=\"https://applecoding.com/wp-content/uploads/2020/03/450_1000-2.jpg 450w, https://applecoding.com/wp-content/uploads/2020/03/450_1000-2-300x169.jpg 300w, https://applecoding.com/wp-content/uploads/2020/03/450_1000-2-390x220.jpg 390w\" sizes=\"(max-width: 450px) 100vw, 450px\" /><figcaption>Sé reescalable</figcaption></figure></div>\n\n\n\n<ul><li>A partir de iOS 13.4, la API de sistema que crea el modo compatible de las apps no adaptadas a la pantalla Super Retina de los iPhone X/XS/11, será llevada a obsolescencia. Por lo tanto, <strong>las apps que no se hayan adaptado se colgarán y por esto, dejarán de ser aceptadas sus actualizaciones hasta que no soporten estas pantallas</strong>.</li><li>Será obligatorio el soporte reescalable de la UI, <strong>prohibiéndose las prácticas de tamaño fijo por dispositivo</strong>. Si tu app pregunta por los tamaños fijos para maquetar el contenido,<strong> Apple implementará nuevas pruebas en su revisión que sacarán a la luz esas carencias y tu app será rechazada</strong>. Se esperan cambios de resolución en los próximos iPhone y Apple no va a activar un modo de compatibilidad de ningún tipo en ellos, así que todas las apps deberán ser <em>resizable</em> a cualquier resolución de pantalla o relación de aspecto.</li><li><strong>Las apps tipo Chatroulette</strong>, donde se tienen contactos uno a uno (y que se suelen usar para contactos sexuales a distancia) quedan prohibidas en el App Store. Las actuales podrán ser borradas sin previo aviso.</li><li>Las apps que se creen para cometer delitos o <strong>ayudar a cualquier usuario a cometerlos</strong>, saltándose la Ley, serán expulsadas de inmediato y no aceptadas si se suben nuevas.</li><li>Si tu app descarga recursos adicionales que no vengan con la descarga inicial, <strong>deberás informar a tu usuario del tamaño de la misma</strong> y preguntar al usuario para confirmar su descarga de forma obligada.</li><li>Las apps que provean de algún tipo de servicio regulado (como de banca, financiero, agencias de viajes&#8230;) y que requieran información sensible del usuario, <strong>deberán ser subidas por la entidad legal en sí que ofrezca el servicio y no por desarrolladores terceros autorizados</strong>, empresas o particulares.</li><li>Se podrá ofrecer servicios de emergencia basados en localización a los usuarios, siempre y cuando se informe claramente al mismo antes de activarlos que <strong>este servicio podría no funcionar en todos los casos con la precisión necesaria</strong>.</li></ul>\n\n\n\n<p>Sin duda, <strong>son cambios importantes que debemos tener en cuenta</strong> y que serán efectivos desde abril. </p>\n\n\n\n<p>Ya podéis poneros a trabajar y si tenéis cualquier duda, <strong>no tengáis problema en poner un comentario al post</strong>. Un saludo y Good Apple Coding.</p>\n",
+            "protected": false
+        },
+        "excerpt":
+        {
+            "rendered": "<p>Apple cambia algunas de sus normas a la hora de revisar las apps, tanto nuevas como actualizaciones. Serán efectivas desde el 30 de abril de 2020. Os adelantamos qué debéis hacer para pasarlas.</p>\n",
+            "protected": false
+        },
+        "author": 1,
+        "featured_media": 4786,
+        "comment_status": "open",
+        "ping_status": "closed",
+        "sticky": false,
+        "template": "",
+        "format": "standard",
+        "meta":
+        {
+            "spay_email": ""
+        },
+        "categories":
+        [
+            3
+        ],
+        "tags":
+        [
+            492
+        ],
+        "jetpack_featured_media_url": "https://applecoding.com/wp-content/uploads/2020/03/Adobe-Spark-9.jpg",
+        "amp_enabled": true,
+        "_links":
+        {
+            "self":
+            [
+                {
+                    "href": "https://applecoding.com/wp-json/wp/v2/posts/4785"
+                }
+            ],
+            "collection":
+            [
+                {
+                    "href": "https://applecoding.com/wp-json/wp/v2/posts"
+                }
+            ],
+            "about":
+            [
+                {
+                    "href": "https://applecoding.com/wp-json/wp/v2/types/post"
+                }
+            ],
+            "author":
+            [
+                {
+                    "embeddable": true,
+                    "href": "https://applecoding.com/wp-json/wp/v2/users/1"
+                }
+            ],
+            "replies":
+            [
+                {
+                    "embeddable": true,
+                    "href": "https://applecoding.com/wp-json/wp/v2/comments?post=4785"
+                }
+            ],
+            "version-history":
+            [
+                {
+                    "count": 7,
+                    "href": "https://applecoding.com/wp-json/wp/v2/posts/4785/revisions"
+                }
+            ],
+            "predecessor-version":
+            [
+                {
+                    "id": 4795,
+                    "href": "https://applecoding.com/wp-json/wp/v2/posts/4785/revisions/4795"
+                }
+            ],
+            "wp:featuredmedia":
+            [
+                {
+                    "embeddable": true,
+                    "href": "https://applecoding.com/wp-json/wp/v2/media/4786"
+                }
+            ],
+            "wp:attachment":
+            [
+                {
+                    "href": "https://applecoding.com/wp-json/wp/v2/media?parent=4785"
+                }
+            ],
+            "wp:term":
+            [
+                {
+                    "taxonomy": "category",
+                    "embeddable": true,
+                    "href": "https://applecoding.com/wp-json/wp/v2/categories?post=4785"
+                },
+                {
+                    "taxonomy": "post_tag",
+                    "embeddable": true,
+                    "href": "https://applecoding.com/wp-json/wp/v2/tags?post=4785"
+                }
+            ],
+            "curies":
+            [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    },
+    {
+        "id": 4759,
+        "date": "2020-03-02T22:15:34",
+        "date_gmt": "2020-03-02T21:15:34",
+        "guid":
+        {
+            "rendered": "https://applecoding.com/?p=4759"
+        },
+        "modified": "2020-03-02T22:16:45",
+        "modified_gmt": "2020-03-02T21:16:45",
+        "slug": "facebook-messenger-reescribe-desde-0-app-monta-desarrollo-nativo",
+        "status": "publish",
+        "type": "post",
+        "link": "https://applecoding.com/noticias/facebook-messenger-reescribe-desde-0-app-monta-desarrollo-nativo",
+        "title":
+        {
+            "rendered": "Facebook re-escribe desde 0 Messenger, gran parte en desarrollo nativo"
+        },
+        "content":
+        {
+            "rendered": "\n<p>Si hay una polémica difícil de resolver en el mundo del desarrollo móvil, es aquella que se refiere al <strong>desarrollo nativo contra el híbrido</strong>. Y no solo nos referimos a un desarrollo híbrido basado en dibujar la interfaz en HTML5, también al uso de <em>frameworks</em> de UI que no sean el creado por el propio creador del sistema (Apple o Google). Principalmente porque estos fuerzan al sistema a realizar una traducción entre librerías poniendo más capas que hacen que las apps funcionen con peor rendimiento.</p>\n\n\n\n<p>Puedes defender o no las apps híbridas o hechas con una librería multiplataforma. Pero <strong>lo que no es discutible</strong> porque es empíricamente demostrable, es que <strong>el desarrollo nativo es más rápido</strong> en su ejecución, <strong>las apps pesan menos</strong> porque usan las librerías que ya tiene cargadas el sistema y se <strong>usa menos código</strong> para conseguir lo mismo.</p>\n\n\n\n<p>Estos hechos son en los que acaba de caer Facebook, que ha anunciado el denominado Proyecto Velocidad de la Luz (<em>Project Lightspeed</em>). Este, básicamente, se basa en <strong>refactorizar toda la app de Messenger</strong> y construirla usando en su mayoría la base de arquitectura nativa de la plataforma iOS. </p>\n\n\n\n<h2>Más rápida, más pequeña y más simple</h2>\n\n\n\n<p>Así es como lo define Facebook, los creadores del <em>framework</em> multiplataforma más usado hoy día: <strong>React Native</strong>. Pero ellos mismos se han dado cuenta de una serie de hechos que son incuestionables. Se han percatado que Messenger, con todas las funciones que ofrecía a los usuarios, <strong>se había convertido en un monstruo difícil de domar y que cada vez iba más lento</strong>, sobre todo en dispositivos más antiguos.</p>\n\n\n\n<p>Así que no han tenido miedo en reconocer lo obvio: que cuando una app ofrece una funcionalidad compleja con muchas ramas y opciones, <strong>la opción más plausible es usar desarrollo nativo</strong>. Si nuestra app es una sola pantalla de información, casi más una web, una híbrida puede servirnos. <strong>Pero para cosas serias, hay que pegarse al sistema lo más posible</strong> y es lo que ha hecho Facebook.</p>\n\n\n\n<p>La nueva app de Messenger ocupa solo el 25% del espacio de los más de 130MB que ocupa la versión actual, <strong>arranca el doble de rápido</strong> y reduce sus líneas de código en un 84% pasando de 1.7 millones a 360.000. Y para conseguirlo han establecido 4 pilares básicos: <strong>usar el sistema operativo nativo, reusar la interfaz, darle más poder a la base de datos SQLite y mejorar el servidor</strong> (ya que también han refactorizado el <em>backend</em>).</p>\n\n\n\n<p>Vamos a transcribir algunos párrafos del artículo que han publicado, para que vean que no es algo que digamos nosotros: <strong>lo dice Facebook ante la cruda realidad</strong>.</p>\n\n\n\n<blockquote class=\"wp-block-quote is-style-default\"><p>Los sistemas operativos móviles continuan evolucionando rápida y dramáticamente. Nuevas funciones e innovaciones son constantemente añadidas por petición de los usuarios y la presión de la propia competencia. Cuando creamos una nueva función, suele tentarnos el construir nuestras propias abstracciones encima del sistema para cerrar una brecha funcional, agregar flexibilidad en la ingeniería o crear experiencias de usuario multiplataforma. Pero el sistema operativo suele ofrecer mucho de lo que necesitamos. Acciones como el renderizado, transcodificación, gestión de hilos o <i>logging</i> pueden ser gestionados por el sistema. Incluso cuando hay soluciones personalizadas que podrían ser más rápidas para métricas locales, usamos el sistema para optimizar las métricas globales.</p></blockquote>\n\n\n\n<p>Básicamente Facebook nos dice que en muchas ocasiones el sistema operativo ya ofrece lo que ellos necesitan y que poner una capa más por encima tal vez pueda ser bueno para algunas funciones específicas, pero <strong>globalmente es mejor usar lo que te ofrece el sistema</strong>.</p>\n\n\n\n<figure class=\"wp-block-image size-large\"><img loading=\"lazy\" width=\"2000\" height=\"1080\" src=\"https://applecoding.com/wp-content/uploads/2020/03/Reuse_UI_V2.gif\" alt=\"\" class=\"wp-image-4760\"/><figcaption>Arquitectura de UI en el nuevo Messenger</figcaption></figure>\n\n\n\n<blockquote class=\"wp-block-quote\"><p>Mientras las librerías de interfaz (UI) pueden ser muy potentes e incrementar la productividad del desarrollador, requieren una constante vigilancia y mantenimiento para mantener al día con todos los cambios que se realizan en los sistemas móviles. Así que mejor que reinventar la rueda, usamos la librería de interfaz disponible en el sistema nativo para soportar un gran número de loas funciones que la app necesita. Eso no solo reduce su tamaño, eliminando la necesidad de cachear o cargar grandes librerías personalizadas, también reduce la complejidad. Las librerías nativas no tienen que ser traducidas a ninguna sub-librería. También usamos algunas librerías de sistemas, incluyendo la librería de proceso de JSON, en vez de crear y almacenar nuestra propia librería en el código base de la app.</p></blockquote>\n\n\n\n<p>En este párrafo está lo más importante. Insistimos que una app híbrida o hecha con una librería de terceros de interfaz multiplataforma, puede ser una gran idea para muchos. Pero su peso para el sistema, la necesidad de tenerla en memoria cacheada, su carga para la CPU&#8230; si el sistema ya ofrece todo eso, ¿por qué reinventar la rueda? <strong>Mejor usar las funciones que ofrece el propio sistema en vez de perder el tiempo y conseguir un peor rendimiento y eficacia</strong>.</p>\n\n\n\n<h2>Conclusiones</h2>\n\n\n\n<p>Leyendo todo el documento se da a entender que la base del desarrollo es en C (como sucede con Office de Microsoft en todas las plataformas que comparten un mismo código común para todas ellas en este lenguaje), y desde este lenguaje <strong>invocan y usan las interfaces en Objective-C</strong> que ofrece UIKit y el resto de <em>frameworks</em> de iOS.</p>\n\n\n\n<p>No podríamos considerar que el nuevo Messenger sea 100% nativo, porque Facebook sigue conservando partes de su desarrollo multiplataforma y su propia arquitectura de proyecto, pero sí han decidido que <strong>la mayoría de la UI se dibuje con UIKit</strong> y usar muchas de las librerías que ofrece Cocoa Touch en vez de las suyas, si ambas ofrecen la misma funcionalidad.</p>\n\n\n\n<p>Sin duda un paso que demuestra, más todavía, que <strong>cuando una app tiene exigencias funcionales importantes</strong> (como el caso de Messenger) el desarrollo híbrido o con librerías de UI de terceros y tus propios componentes para todo, <strong>es una mala decisión estratégica</strong> pues ofreces una peor experiencia al usuario, más lenta, que ocupa más y que en los sistemas más antiguos no va a funcionar convenientemente.</p>\n\n\n\n<p><strong>Nuestras felicitaciones a Facebook por esta decisión</strong> y esperamos ansiosos que hagan lo mismo y pasen por <em>Lightspeed</em> al resto de sus apps. Un saludo y Good Apple Coding.</p>\n",
+            "protected": false
+        },
+        "excerpt":
+        {
+            "rendered": "<p>Facebook anuncia la refactorización de la app Messenger, pasando a usar tecnología nativa en vez de basada en sus propias soluciones multiplataforma. Os contamos los detalles.</p>\n",
+            "protected": false
+        },
+        "author": 1,
+        "featured_media": 4761,
+        "comment_status": "open",
+        "ping_status": "closed",
+        "sticky": false,
+        "template": "",
+        "format": "standard",
+        "meta":
+        {
+            "spay_email": ""
+        },
+        "categories":
+        [
+            3
+        ],
+        "tags":
+        [
+            139,
+            491,
+            490
+        ],
+        "jetpack_featured_media_url": "https://applecoding.com/wp-content/uploads/2020/03/Lightspeed_Hero.jpeg",
+        "amp_enabled": true,
+        "_links":
+        {
+            "self":
+            [
+                {
+                    "href": "https://applecoding.com/wp-json/wp/v2/posts/4759"
+                }
+            ],
+            "collection":
+            [
+                {
+                    "href": "https://applecoding.com/wp-json/wp/v2/posts"
+                }
+            ],
+            "about":
+            [
+                {
+                    "href": "https://applecoding.com/wp-json/wp/v2/types/post"
+                }
+            ],
+            "author":
+            [
+                {
+                    "embeddable": true,
+                    "href": "https://applecoding.com/wp-json/wp/v2/users/1"
+                }
+            ],
+            "replies":
+            [
+                {
+                    "embeddable": true,
+                    "href": "https://applecoding.com/wp-json/wp/v2/comments?post=4759"
+                }
+            ],
+            "version-history":
+            [
+                {
+                    "count": 2,
+                    "href": "https://applecoding.com/wp-json/wp/v2/posts/4759/revisions"
+                }
+            ],
+            "predecessor-version":
+            [
+                {
+                    "id": 4763,
+                    "href": "https://applecoding.com/wp-json/wp/v2/posts/4759/revisions/4763"
+                }
+            ],
+            "wp:featuredmedia":
+            [
+                {
+                    "embeddable": true,
+                    "href": "https://applecoding.com/wp-json/wp/v2/media/4761"
+                }
+            ],
+            "wp:attachment":
+            [
+                {
+                    "href": "https://applecoding.com/wp-json/wp/v2/media?parent=4759"
+                }
+            ],
+            "wp:term":
+            [
+                {
+                    "taxonomy": "category",
+                    "embeddable": true,
+                    "href": "https://applecoding.com/wp-json/wp/v2/categories?post=4759"
+                },
+                {
+                    "taxonomy": "post_tag",
+                    "embeddable": true,
+                    "href": "https://applecoding.com/wp-json/wp/v2/tags?post=4759"
+                }
+            ],
+            "curies":
+            [
+                {
+                    "name": "wp",
+                    "href": "https://api.w.org/{rel}",
+                    "templated": true
+                }
+            ]
+        }
+    }
+]
