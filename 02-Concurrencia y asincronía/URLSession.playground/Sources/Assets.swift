@@ -17,7 +17,7 @@ public enum NetworkError: Error {
         case .status(let int):
             return "Error status: \(int)"
         case .json(let error):
-            return "Error status: \(error)"
+            return "Error json: \(error)"
         case .dataNotValid:
             return "Error not valid"
         case .unknown:
@@ -26,7 +26,7 @@ public enum NetworkError: Error {
     }
 }
 
-// MARK: - Emplead
+// MARK: - Empleado
 
 public struct Empleado: Codable {
     let id: Int
