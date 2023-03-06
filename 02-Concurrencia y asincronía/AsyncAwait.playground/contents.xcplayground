@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' buildActiveScheme='true' importAppTypes='true'>
+    <pages>
+        <page name='AsyncAwait Simple'/>
+        <page name='AsyncAwait Errores'/>
+        <page name='AsyncAwait JSON'/>
+        <page name='Continuation'/>
+        <page name='Concurrencia estructurada'/>
+        <page name='Grupo de Tareas'/>
+        <page name='AsyncSequence'/>
+        <page name='Async Streams'/>
+    </pages>
+</playground>

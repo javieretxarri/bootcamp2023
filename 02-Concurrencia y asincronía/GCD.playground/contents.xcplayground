@@ -6,5 +6,6 @@
         <page name='Descarga imagenes'/>
         <page name='Clase imagenes'/>
         <page name='Clase imagenes perform concurrent'/>
+        <page name='ToBeDeleted'/>
     </pages>
 </playground>
