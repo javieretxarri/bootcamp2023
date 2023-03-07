@@ -1,0 +1,19 @@
+user_id,movie_id,rating_id
+A,Inception,7
+A,Interstellar,9
+A,Titanic,8
+C,Interstellar,6
+C,Star Wars,7
+B,Inception,5
+A,Star Wars,7
+B,Titanic,6
+B,Toy Story,9
+D,Interstellar,5
+D,Toy Story,7
+D,Star Wars,6
+B,Super 8,8
+C,Super 8,4
+D,Super 8,6
+A,Raiders of the Lost Ark,9
+C,Raiders of the Lost Ark,7
+D,Raiders of the Lost Ark,4

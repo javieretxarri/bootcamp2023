@@ -37,7 +37,7 @@ func getRemoteImages(urls: [URL]) -> AsyncThrowingStream<UIImage?, Error> {
             } callback: { result in
                 // Upcasting para que sea error
                 continuation.yield(with: result.mapError { $0 as Error })
-                if !(index < urls.count) {
+                if index == urls.count - 1 {
                     continuation.finish()
                 }
             }

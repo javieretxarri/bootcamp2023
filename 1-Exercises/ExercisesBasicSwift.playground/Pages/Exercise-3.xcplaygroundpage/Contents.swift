@@ -29,4 +29,4 @@ func printNFirstFibonacciNumbers(number: Int) {
     }
 }
 
-printNFirstFibonacciNumbers(number: 90)
+printNFirstFibonacciNumbers(number: 6)

@@ -9,5 +9,8 @@
         <page name='Grupo de Tareas'/>
         <page name='AsyncSequence'/>
         <page name='Async Streams'/>
+        <page name='Async URL'/>
+        <page name='Data Race'/>
+        <page name='Actores'/>
     </pages>
 </playground>
