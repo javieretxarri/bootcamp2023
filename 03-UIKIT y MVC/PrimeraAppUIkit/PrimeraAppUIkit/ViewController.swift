@@ -30,7 +30,11 @@ final class ViewController: UIViewController {
 
     @IBAction func cambiarColor(_ sender: Any) {
         for label in labels {
-            label.textColor = .blue
+            if label.textColor == .blue {
+                label.textColor = .red
+            } else {
+                label.textColor = .blue
+            }
         }
     }
 }

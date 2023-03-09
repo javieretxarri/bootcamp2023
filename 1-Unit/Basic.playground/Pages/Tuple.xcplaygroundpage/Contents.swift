@@ -36,4 +36,3 @@ if case (_, 1999, _, _) = movie1 { // pattern matching
 var (a, b) = (1, 2)
 (a, b) = (b, a)
 print(a, b)
-

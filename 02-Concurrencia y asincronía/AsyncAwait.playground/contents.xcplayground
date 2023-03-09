@@ -12,5 +12,6 @@
         <page name='Async URL'/>
         <page name='Data Race'/>
         <page name='Actores'/>
+        <page name='Data race test'/>
     </pages>
 </playground>
