@@ -5,7 +5,6 @@
         <page name='Inferencia'/>
         <page name='Funciones puras'/>
         <page name='Funciones embebidas'/>
-        <page name='Parcialización - Currying'/>
         <page name='Recursividad'/>
         <page name='Map'/>
         <page name='Filter'/>
@@ -19,5 +18,7 @@
         <page name='forEach'/>
         <page name='sorted'/>
         <page name='all4One'/>
+        <page name='Parcialización - Currying'/>
+        <page name='ToBeDeleted'/>
     </pages>
 </playground>

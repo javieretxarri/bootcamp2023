@@ -20,7 +20,7 @@ import UIKit
             layer.shadowRadius = shadow
             layer.shadowOpacity = 0.5
             layer.shadowOffset = CGSize(width: 0, height: shadow)
-            layer.masksToBounds = false
+            layer.masksToBounds = true
         }
     }
 }

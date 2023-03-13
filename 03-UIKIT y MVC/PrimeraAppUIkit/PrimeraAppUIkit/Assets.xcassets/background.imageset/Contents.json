@@ -1,0 +1,33 @@
+{
+  "images" : [
+    {
+      "filename" : "background~iphone.jpg",
+      "idiom" : "iphone",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "background~iphone@2x.jpg",
+      "idiom" : "iphone",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "background~iphone@3x.jpg",
+      "idiom" : "iphone",
+      "scale" : "3x"
+    },
+    {
+      "filename" : "background~ipad.jpg",
+      "idiom" : "ipad",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "background~ipad@2x.jpg",
+      "idiom" : "ipad",
+      "scale" : "2x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
